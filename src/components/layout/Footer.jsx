@@ -36,9 +36,7 @@ const Footer = () => {
         <Container className="relative py-14 md:py-20">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-8">
             <div className="sm:col-span-2 lg:col-span-1">
-              <div className="inline-flex rounded-2xl bg-white p-3 shadow-lg">
-                <Logo />
-              </div>
+              <Logo variant="footer" />
               <p className="mt-5 max-w-xs text-sm leading-relaxed text-slate-400">
                 {footerContent.tagline}
               </p>

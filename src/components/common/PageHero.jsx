@@ -29,7 +29,7 @@ const PageHero = ({
   className = '',
   children,
 }) => {
-  const accent = themeColor || '#F59A1F';
+  const accent = themeColor || '#F7941D';
 
   return (
     <section className={`relative isolate overflow-hidden bg-navy ${className}`}>

@@ -5,37 +5,37 @@ export default {
     extend: {
       colors: {
         blue: {
-          DEFAULT: '#1F77C0',
+          DEFAULT: '#1A75BB',
           light: '#4A97D4',
           dark: '#155F9C',
         },
         orange: {
-          DEFAULT: '#F59A1F',
+          DEFAULT: '#F7941D',
           light: '#F7B455',
           dark: '#D9820A',
         },
         lime: {
-          DEFAULT: '#B7DC8B',
+          DEFAULT: '#B8DB8B',
           dark: '#6FA33E',
         },
         navy: {
-          DEFAULT: '#0B2A4A',
+          DEFAULT: '#092A49',
           light: '#123B66',
           dark: '#071C33',
         },
-        sky: '#EAF2FB',
-        cream: '#FEF3E3',
-        mint: '#E8F3DD',
-        ink: '#0B2A4A',
+        sky: '#EAF3FC',
+        cream: '#FFF3E3',
+        mint: '#EBF5DA',
+        ink: '#092A49',
         muted: '#5B6B7C',
         accent: {
-          DEFAULT: '#1F77C0',
+          DEFAULT: '#1A75BB',
           light: '#4A97D4',
           dark: '#155F9C',
         },
         teal: {
           DEFAULT: '#6FA33E',
-          light: '#B7DC8B',
+          light: '#B8DB8B',
           dark: '#557F2F',
         },
       },
@@ -50,9 +50,9 @@ export default {
         pill: '9999px',
       },
       boxShadow: {
-        card: '0 4px 24px rgba(11, 42, 74, 0.08)',
-        'card-hover': '0 18px 45px rgba(11, 42, 74, 0.16)',
-        button: '0 8px 20px rgba(245, 154, 31, 0.28)',
+        card: '0 4px 24px rgba(9, 42, 73, 0.08)',
+        'card-hover': '0 18px 45px rgba(9, 42, 73, 0.16)',
+        button: '0 8px 20px rgba(247, 148, 29, 0.28)',
       },
       keyframes: {
         marquee: {

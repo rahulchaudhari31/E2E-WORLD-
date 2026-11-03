@@ -9,33 +9,33 @@
 /* ---------- Custom Theme (Tailwind v4 CSS-first config) ----- */
 @theme {
   /* Brand colours */
-  --color-blue: #1f77c0;
+  --color-blue: #1a75bb;
   --color-blue-light: #4a97d4;
   --color-blue-dark: #155f9c;
-  --color-orange: #f59a1f;
+  --color-orange: #f7941d;
   --color-orange-light: #f7b455;
   --color-orange-dark: #d9820a;
-  --color-lime: #b7dc8b;
+  --color-lime: #b8db8b;
   --color-lime-dark: #6fa33e;
-  --color-navy: #0b2a4a;
+  --color-navy: #092a49;
   --color-navy-light: #123b66;
   --color-navy-dark: #071c33;
 
   /* Section tints */
-  --color-sky: #eaf2fb;
-  --color-cream: #fef3e3;
-  --color-mint: #e8f3dd;
+  --color-sky: #eaf3fc;
+  --color-cream: #fff3e3;
+  --color-mint: #ebf5da;
 
   /* Neutral text */
-  --color-ink: #0b2a4a;
+  --color-ink: #092a49;
   --color-muted: #5b6b7c;
 
   /* Legacy aliases used by the inner pages */
-  --color-accent: #1f77c0;
+  --color-accent: #1a75bb;
   --color-accent-light: #4a97d4;
   --color-accent-dark: #155f9c;
   --color-teal: #6fa33e;
-  --color-teal-light: #b7dc8b;
+  --color-teal-light: #b8db8b;
   --color-teal-dark: #557f2f;
   --color-offwhite: #f8fbfe;
 
@@ -64,9 +64,9 @@
   --radius-badge: 9999px;
 
   /* Shadows */
-  --shadow-card: 0 4px 24px rgba(11, 42, 74, 0.08);
-  --shadow-card-hover: 0 18px 45px rgba(11, 42, 74, 0.16);
-  --shadow-button: 0 8px 20px rgba(245, 154, 31, 0.28);
+  --shadow-card: 0 4px 24px rgba(9, 42, 73, 0.08);
+  --shadow-card-hover: 0 18px 45px rgba(9, 42, 73, 0.16);
+  --shadow-button: 0 8px 20px rgba(247, 148, 29, 0.28);
 
   /* Motion */
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
@@ -135,10 +135,12 @@ summary:focus-visible,
   outline-offset: 3px;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+@layer base {
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 ::selection {
@@ -288,10 +290,10 @@ img {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(31, 119, 192, 0.4);
+    box-shadow: 0 0 0 0 rgba(26, 117, 187, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(31, 119, 192, 0);
+    box-shadow: 0 0 0 12px rgba(26, 117, 187, 0);
   }
 }
 

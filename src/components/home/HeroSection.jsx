@@ -47,14 +47,14 @@ const HeroSection = () => {
       <div
         aria-hidden="true"
         className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(31, 119, 192, 0.88)' }}
+        style={{ backgroundColor: 'rgba(26, 117, 187, 0.88)' }}
       />
 
       {/* Decorative flat circles */}
       <motion.div
         aria-hidden="true"
         animate={float(14, 9)}
-        className="pointer-events-none absolute -right-24 -top-28 h-72 w-72 rounded-full bg-orange sm:-right-32 sm:-top-32 sm:h-[26rem] sm:w-[26rem] lg:-right-24 lg:-top-40 lg:h-[32rem] lg:w-[32rem]"
+        className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-orange sm:-right-24 sm:-top-24 sm:h-64 sm:w-64 md:-right-32 md:-top-32 md:h-[26rem] md:w-[26rem] lg:-right-24 lg:-top-40 lg:h-[32rem] lg:w-[32rem]"
       />
       <motion.div
         aria-hidden="true"
