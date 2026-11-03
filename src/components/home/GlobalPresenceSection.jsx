@@ -25,7 +25,7 @@ const GlobalPresenceSection = () => {
           </span>
           <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {heading.before}
-            {heading.accent}
+            <span className="text-orange">{heading.accent}</span>
           </h2>
 
           <ul className="mt-9 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
