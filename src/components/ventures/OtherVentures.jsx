@@ -14,7 +14,7 @@ const OtherVentures = ({ currentSlug }) => {
       <Container>
         <SectionHeading
           eyebrow="Keep Exploring"
-          title="Other ventures"
+          title="Other companies"
           subtitle="Discover the other specialist teams that make up e2e World Group."
         />
 

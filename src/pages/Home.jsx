@@ -15,7 +15,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: company.name,
   url: site.url,
-  logo: new URL('/logo.svg', site.url).href,
+  logo: new URL('/logo.png', site.url).href,
   description: company.description,
   foundingDate: String(company.founded),
   email: contact.email,

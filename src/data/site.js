@@ -9,24 +9,26 @@ import images from './images';
 export const site = {
   url: 'https://www.e2eworld.co.uk',
   defaultTitle:
-    'e2e World Group | Recruitment, HR, IT, Immigration & Cyber Solutions',
+    'e2e World Group | Talent, Technology, Compliance & Growth',
   defaultDescription:
-    'e2e World Group delivers end-to-end recruitment, HR, IT, immigration, cyber security and digital solutions from its UK head office in Birmingham.',
+    'e2e World Group brings four specialist companies together to give UK businesses a true one-stop solution for recruitment, HR, IT, immigration and digital growth from its Birmingham head office.',
   ogImage: '/og-image.png',
-  themeColor: '#0B1F3A',
+  themeColor: '#092A49',
 };
 
 export const company = {
   name: 'e2e World Group',
   shortName: 'e2e World',
-  tagline: 'End-to-End Solutions. Worldwide Impact.',
+  tagline: 'Talent. Technology. Compliance. Growth.',
   founded: 2007,
   mission:
-    'Empower businesses with innovative strategies, workforce solutions, and cutting-edge technology, ensuring sustainable growth in a competitive marketplace.',
+    'To empower businesses with innovative strategies, workforce solutions and cutting-edge technology that deliver sustainable growth.',
   vision:
-    'To provide comprehensive talent and management solutions to local businesses in the UK, helping them thrive in an ever-evolving global economy.',
+    "To be the UK's most trusted one-stop partner for talent, workforce mobility and digital growth.",
+  belief:
+    'Bridging the talent gap requires more than processes. It demands holistic solutions that support skilled professionals throughout their entire journey.',
   description:
-    'Since 2007, e2e World Group has been a trusted partner for businesses seeking recruitment, HR, IT, immigration and cybersecurity solutions. With a UK Head Office in Birmingham and a global footprint spanning the Middle East, South East Asia and Europe, we deliver end-to-end services that drive results.',
+    'Founded in 2007 and headquartered in Birmingham, e2e World Group is a group of four specialist companies providing talent, workforce, immigration and digital solutions to UK businesses and skilled professionals. Our global network stretches across the UK, the Middle East, Europe, South East Asia and South Asia.',
 };
 
 /* ──────────────────── Contact Details ──────────────────── */
@@ -58,18 +60,18 @@ export const contact = {
 
 /* ──────────────────── Contact Subjects ──────────────────── */
 export const contactSubjects = [
-  'General Enquiry',
-  'Recruitment & HR',
-  'IT Hiring',
-  'Immigration',
-  'Cyber & Digital',
+  'e2e HRC',
+  'e2e Infosys',
+  'elite PiC',
+  'e2e Cyber Solutions',
+  'Not sure',
 ];
 
 /* ──────────────────── Navigation ──────────────────── */
 export const navigation = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about' },
-  { label: 'Our Ventures', path: '/ventures' },
+  { label: 'Our Companies', path: '/ventures' },
   { label: 'Get in Touch', path: '/contact' },
 ];
 
@@ -77,41 +79,39 @@ export const navigation = [
 export const coreValues = [
   {
     title: 'Integrity',
-    description: 'Transparency and ethical practices are at the heart of every engagement we undertake.',
+    description:
+      'Honest, transparent advice and fair dealing with clients and candidates.',
     icon: 'ShieldCheck',
   },
   {
-    title: 'Innovation',
-    description: 'We embrace cutting-edge technology and forward-thinking strategies to keep our clients ahead of the curve.',
-    icon: 'Lightbulb',
-  },
-  {
     title: 'Excellence',
-    description: 'We set the highest standards, delivering measurable outcomes that exceed expectations.',
+    description: 'Getting the job done right, the first time, each time.',
     icon: 'Trophy',
   },
   {
     title: 'Partnership',
-    description: 'We build lasting relationships, working alongside our clients as true strategic partners.',
+    description: 'Long-term relationships rather than one-off transactions.',
     icon: 'Handshake',
   },
   {
-    title: 'Compliance',
-    description: 'We operate within regulatory frameworks, including IAA-approved immigration advisory and right-to-work compliance support.',
-    icon: 'Scale',
+    title: 'Innovation',
+    description:
+      'Modern tools and fresh thinking to solve evolving workforce challenges.',
+    icon: 'Lightbulb',
   },
   {
-    title: 'Growth',
-    description: 'We help businesses scale with workforce, technology and digital solutions built for sustainable growth.',
-    icon: 'TrendingUp',
+    title: 'Global outlook',
+    description:
+      'Local UK expertise backed by an international network.',
+    icon: 'Globe2',
   },
 ];
 
 /* ──────────────────── Global Regions ──────────────────── */
 export const globalRegions = [
   'United Kingdom',
-  'Europe',
   'Middle East',
+  'Europe',
   'South East Asia',
   'South Asia',
 ];
@@ -125,24 +125,19 @@ export const timeline = [
       'Established with a vision to provide comprehensive talent and management solutions to local businesses in the UK.',
     placeholder: false,
   },
-  // TODO: client to confirm — placeholder milestones below
   {
-    year: 'TBC',
-    title: 'Group expands internationally',
-    description: 'Placeholder milestone — details to be confirmed by the client.',
-    placeholder: true,
+    year: 'Growth',
+    title: 'Expansion beyond the UK and the Middle East',
+    description:
+      'The group expanded into Europe and South East Asia, helping to address UK talent shortages by bringing skilled professionals from around the world.',
+    placeholder: false,
   },
   {
-    year: 'TBC',
-    title: 'New divisions launched',
-    description: 'Placeholder milestone — details to be confirmed by the client.',
-    placeholder: true,
-  },
-  {
-    year: 'TBC',
-    title: 'Continued global growth',
-    description: 'Placeholder milestone — details to be confirmed by the client.',
-    placeholder: true,
+    year: 'Today',
+    title: 'Four specialist sister companies',
+    description:
+      'The group has grown into four distinct companies — e2e HRC, elite PiC, e2e Infosys and e2e Cyber Solutions — each covering a different part of the talent and business landscape.',
+    placeholder: false,
   },
 ];
 
@@ -181,11 +176,11 @@ export const teamMembers = [
 
 /* ──────────────────── Hero Section ──────────────────── */
 export const hero = {
-  headline: 'End-to-End Solutions for a',
-  headlineHighlight: 'Connected World',
+  headline: 'Talent. Technology. Compliance.',
+  headlineHighlight: 'Growth.',
   subtitle:
-    'Recruitment · HR · IT · Immigration · Cyber Security — all under one roof. Since 2007, e2e World Group has been empowering UK businesses with the talent, technology, and compliance support they need to thrive globally.',
-  primaryCta: { label: 'Explore Our Ventures', path: '/ventures' },
+    'e2e World Group brings four specialist companies together to give UK businesses a true one-stop solution, from hiring the right people to bringing them to the UK and growing your brand.',
+  primaryCta: { label: 'Explore Our Companies', path: '/ventures' },
   secondaryCta: { label: 'Contact Us', path: '/contact' },
   image: images.hero,
 };

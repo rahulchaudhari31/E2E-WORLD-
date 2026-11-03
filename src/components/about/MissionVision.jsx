@@ -27,7 +27,7 @@ const MissionVision = () => {
         <SectionHeading
           eyebrow="Purpose"
           title="Our mission and vision"
-          subtitle="The principles that guide every partnership, project and placement we deliver."
+          subtitle="The principles that guide every partnership, project and placement across the group."
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">

@@ -133,7 +133,7 @@ const NeedFinder = () => {
                   </span>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                      Recommended venture
+                      Recommended company
                     </p>
                     <h3 className="mt-1 text-xl font-bold font-heading text-navy">
                       {recommended.name}

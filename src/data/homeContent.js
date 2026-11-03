@@ -12,8 +12,9 @@ export const heroContent = {
     { text: 'Growth.', color: 'white' },
   ],
   subtext:
-    'Four specialist companies, one connected group. Hire, mobilise and grow your business with us.',
+    'e2e World Group brings four specialist companies together to give UK businesses a true one-stop solution, from hiring the right people to bringing them to the UK and growing your brand.',
   cta: { label: 'Explore Our Companies', href: '#companies' },
+  secondaryCta: { label: 'Contact Us', to: '/contact' },
   finder: {
     eyebrow: 'FIND YOUR SOLUTION',
     title: 'What do you need today?',
@@ -23,28 +24,32 @@ export const heroContent = {
         id: 'hire',
         label: 'Hire talent',
         company: 'e2e HRC',
-        description: 'Permanent, temporary and contract recruitment across the UK.',
+        description:
+          'End-to-end recruitment and HR services for multiple sectors across the UK.',
         url: 'https://www.e2ehrc.co.uk/',
       },
       {
         id: 'it',
         label: 'IT & specialist hiring',
         company: 'e2e Infosys',
-        description: 'Specialist technical hiring, IT consulting and workforce solutions.',
+        description:
+          'Specialist technical hiring, IT consulting and workforce management solutions.',
         url: 'https://www.e2einfosys.com/',
       },
       {
         id: 'visas',
         label: 'Visas & sponsorship',
         company: 'elite PiC',
-        description: 'IAA-approved sponsorship licence, visa and compliance support.',
+        description:
+          'IAA (formerly OISC) approved sponsorship licence, visa and compliance support.',
         url: 'https://www.elitepic.co.uk/',
       },
       {
         id: 'web',
         label: 'Website & marketing',
         company: 'e2e Cyber Solutions',
-        description: 'Web development, digital marketing and cybersecurity.',
+        description:
+          'Digital marketing, web development and cybersecurity that grow your brand.',
         url: 'https://www.e2ecybersolutions.com/',
       },
     ],
@@ -56,7 +61,7 @@ export const marqueeItems = [
   'Banking & Finance',
   'Insurance',
   'Retail',
-  'Engineering',
+  'Engineering & Manufacturing',
   'Automotive',
   'Telecom',
   'Aerospace',
@@ -67,17 +72,17 @@ export const companiesSection = {
   heading: {
     before: 'One group. ',
     accent: 'Four',
-    after: ' ways to grow.',
+    after: ' specialist companies.',
   },
   subtext:
-    'Each company is a specialist in its field. Together they cover your whole journey.',
+    'e2e World Group brings four specialist companies together to give UK businesses a true one-stop solution.',
   companies: [
     {
       name: 'e2e HRC',
       slug: 'e2e-hrc',
       url: 'https://www.e2ehrc.co.uk/',
       description:
-        'Recruitment and HR specialists connecting employers with the right people, from permanent hires to global talent.',
+        'The cornerstone of the group, providing end-to-end recruitment and HR services for multiple sectors across the UK, with a presence in the Middle East, South East Asia and the UK.',
       tags: ['Recruitment', 'HR', 'Global Talent'],
     },
     {
@@ -85,7 +90,7 @@ export const companiesSection = {
       slug: 'e2e-infosys',
       url: 'https://www.e2einfosys.com/',
       description:
-        'Technical hiring, IT consulting and workforce management for banking, finance, telecom and more.',
+        'Hiring solutions for technical roles in IT, banking, finance, telecom and more, with a presence in the UK, Europe and South Asia.',
       tags: ['IT Consulting', 'RPO', 'Workforce'],
     },
     {
@@ -93,7 +98,7 @@ export const companiesSection = {
       slug: 'elite-pic',
       url: 'https://www.elitepic.co.uk/',
       description:
-        'IAA-approved immigration advisory handling sponsor licences, visas and compliance for a global workforce.',
+        'An IAA (formerly OISC) approved advisory company specialising in immigration consultancy, sponsorship licences, visa applications and compliance.',
       tags: ['Sponsor Licences', 'Visas', 'Compliance'],
     },
     {
@@ -101,7 +106,7 @@ export const companiesSection = {
       slug: 'e2e-cyber-solutions',
       url: 'https://www.e2ecybersolutions.com/',
       description:
-        'Web development, digital marketing and cybersecurity that help brands grow safely online.',
+        'Modern digital marketing and cybersecurity solutions that help clients protect their assets and grow their digital presence.',
       tags: ['Web', 'Marketing', 'Cybersecurity'],
     },
   ],
@@ -121,12 +126,12 @@ export const servicesSection = {
       company: 'e2e HRC',
       url: 'https://www.e2ehrc.co.uk/',
       description:
-        'A one-stop recruitment and HR partner for employers and employees, covering permanent, temporary and contract hiring with ongoing HR support.',
+        'e2e HRC is the cornerstone of the group, providing end-to-end recruitment and HR services for multiple sectors across the UK. With a presence in the Middle East, South East Asia and the UK, it is a trusted partner for organisations seeking global talent solutions.',
       features: [
-        'Permanent recruitment',
-        'Temporary and contract staffing',
-        'HR support',
+        'Recruitment',
+        'HR services',
         'Global talent sourcing',
+        'Tailored support',
       ],
     },
     {
@@ -135,11 +140,11 @@ export const servicesSection = {
       company: 'e2e Infosys',
       url: 'https://www.e2einfosys.com/',
       description:
-        'Specialist hiring and IT workforce solutions for technical roles across IT, banking, finance and telecom, aligned to your business objectives.',
+        'e2e Infosys provides hiring solutions for technical roles in sectors such as IT, banking, finance, telecom and more. With a presence in the UK, Europe and South Asia, it helps businesses compete where innovation and specialisation drive success.',
       features: [
         'IT consulting',
-        'Workforce Management Solutions',
-        'Recruitment Process Outsourcing',
+        'Workforce management solutions',
+        'Recruitment Process Outsourcing (RPO)',
         'Technical hiring',
       ],
     },
@@ -149,12 +154,12 @@ export const servicesSection = {
       company: 'elite PiC',
       url: 'https://www.elitepic.co.uk/',
       description:
-        'An IAA-approved immigration advisory simplifying sponsorship licences, visa applications and compliance for global workforce mobility.',
+        'elite PiC is an IAA (formerly OISC) approved advisory company specialising in immigration consultancy. It supports businesses that need sponsorship licences, visa applications and compliance support.',
       features: [
         'Sponsor licences',
         'Visa applications',
         'Compliance support',
-        'Immigration advice',
+        'Global workforce mobility',
       ],
     },
     {
@@ -163,10 +168,10 @@ export const servicesSection = {
       company: 'e2e Cyber Solutions',
       url: 'https://www.e2ecybersolutions.com/',
       description:
-        'Integrated digital services that protect your assets and strengthen your online presence, from cybersecurity to bespoke web development.',
+        'e2e Cyber Solutions provides modern digital marketing and cybersecurity solutions, helping clients protect their assets and grow their digital presence through result-driven marketing and comprehensive web development.',
       features: [
-        'Web development',
         'Digital marketing',
+        'Web development',
         'Cybersecurity',
         'Brand growth',
       ],
@@ -175,45 +180,45 @@ export const servicesSection = {
 };
 
 export const journeySection = {
-  eyebrow: 'BETTER TOGETHER',
+  eyebrow: 'HOW THE GROUP WORKS TOGETHER',
   heading: {
-    before: 'One client journey, ',
-    accent: 'four',
-    after: ' specialists.',
+    before: 'One group, ',
+    accent: 'one',
+    after: ' point of contact.',
   },
-  subtext: 'Tap a step to see how the group supports you.',
+  subtext: 'No gaps between services — from hiring to growth.',
   steps: [
     {
       number: '01',
       label: 'Hire',
       companies: 'E2E HRC & E2E INFOSYS',
-      title: 'Find the right people, fast.',
+      title: 'Hire the right people.',
       description:
-        'We map the market, shortlist specialist talent and place permanent, temporary or contract professionals who fit your business.',
+        'e2e HRC and e2e Infosys source and shortlist the right people for general and specialist technical roles.',
     },
     {
       number: '02',
       label: 'Mobilise',
       companies: 'ELITE PIC',
-      title: 'Get international talent ready to work.',
+      title: 'Bring overseas talent to the UK.',
       description:
-        'Our IAA-approved team handles sponsor licences, visa applications and compliance so your new hires can start with confidence.',
+        'elite PiC manages sponsorship licences, visa applications and compliance so overseas talent can join your team.',
     },
     {
       number: '03',
       label: 'Manage',
-      companies: 'E2E HRC & E2E INFOSYS',
-      title: 'Keep your workforce running smoothly.',
+      companies: 'E2E INFOSYS',
+      title: 'Keep your workforce running.',
       description:
-        'From HR support and onboarding to workforce management and IT consulting, we help you manage people and technology day to day.',
+        'e2e Infosys supports payroll, workforce management and IT consulting.',
     },
     {
       number: '04',
       label: 'Grow',
       companies: 'E2E CYBER SOLUTIONS',
-      title: 'Build a stronger digital presence.',
+      title: 'Grow your brand online.',
       description:
-        'Web development, digital marketing and cybersecurity work together to help you reach new customers and protect your brand.',
+        'e2e Cyber Solutions builds your website, marketing and brand. One group, one point of contact, no gaps between services.',
     },
   ],
 };
@@ -225,7 +230,7 @@ export const aboutSection = {
     accent: 'Serving the world.',
   },
   paragraph:
-    'We set out in 2007 to give UK businesses complete talent and management solutions. Today our four companies empower organisations with workforce strategy, specialist expertise and modern technology.',
+    'Founded in 2007 and headquartered in Birmingham, e2e World Group brings four specialist companies together to give UK businesses comprehensive talent and management solutions. Today, our sister companies support organisations and skilled professionals at every step.',
   cta: { label: 'Our Story', to: '/about' },
   stats: [
     { value: 2007, label: 'Year founded', tone: 'orange' },
@@ -244,8 +249,8 @@ export const globalPresenceSection = {
   regions: [
     { name: 'United Kingdom', suffix: '(HQ)' },
     { name: 'Middle East' },
-    { name: 'South East Asia' },
     { name: 'Europe' },
+    { name: 'South East Asia' },
     { name: 'South Asia' },
   ],
 };
@@ -265,12 +270,12 @@ export const faqSection = {
     {
       question: 'Do you work with businesses outside the UK?',
       answer:
-        'Yes. The group supports clients across the United Kingdom, Middle East, South East Asia, Europe and South Asia.',
+        'Yes. The group supports clients across the United Kingdom, the Middle East, Europe, South East Asia and South Asia.',
     },
     {
       question: 'Can the companies work together on one project?',
       answer:
-        'Yes. The four companies are part of one group and regularly work together, for example combining recruitment, immigration support and IT services on a single project.',
+        'Yes. The four sister companies are part of one group and regularly work together, for example combining recruitment, immigration support and digital services on a single project.',
     },
     {
       question: 'How do I get started?',
@@ -283,21 +288,23 @@ export const faqSection = {
 export const contactSection = {
   eyebrow: 'CONTACT US',
   heading: {
-    before: "Let's start something ",
-    accent: 'great.',
+    before: 'Not sure which service ',
+    accent: 'you need?',
   },
   subtext:
-    'Tell us what you need and we will route you to the right team.',
+    'Tell us what you are working on and we will connect you with the right team.',
   interests: [
-    { label: 'e2e HRC', subject: 'Recruitment & HR' },
-    { label: 'e2e Infosys', subject: 'IT Hiring' },
-    { label: 'elite PiC', subject: 'Immigration' },
-    { label: 'e2e Cyber Solutions', subject: 'Cyber & Digital' },
+    { label: 'e2e HRC', subject: 'e2e HRC' },
+    { label: 'e2e Infosys', subject: 'e2e Infosys' },
+    { label: 'elite PiC', subject: 'elite PiC' },
+    { label: 'e2e Cyber Solutions', subject: 'e2e Cyber Solutions' },
+    { label: 'Not sure', subject: 'Not sure' },
   ],
 };
 
 export const footerContent = {
-  tagline: 'Talent and management solutions for a connected world.',
+  tagline:
+    'Talent and management solutions for a connected world. Recruitment, immigration, IT and digital growth from one group.',
   groupLinks: [
     { label: 'Home', to: '/' },
     { label: 'About Us', to: '/about' },

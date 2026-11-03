@@ -4,7 +4,6 @@ import MissionVision from '../components/about/MissionVision';
 import Timeline from '../components/about/Timeline';
 import GroupStructure from '../components/about/GroupStructure';
 import CoreValues from '../components/about/CoreValues';
-import TeamSection from '../components/about/TeamSection';
 import GlobalPresence from '../components/about/GlobalPresence';
 import CTABanner from '../components/about/CTABanner';
 import { company } from '../data/site';
@@ -15,14 +14,14 @@ const About = () => {
     <>
       <Seo
         title={`About ${company.name}`}
-        description="Learn about e2e World Group, our mission, values, timeline and the specialist ventures delivering recruitment, HR, IT, immigration and cyber security solutions."
+        description="Learn about e2e World Group, founded in Birmingham in 2007, and the four specialist companies delivering recruitment, HR, IT, immigration and digital solutions."
         path="/about"
       />
       <main>
         <PageHero
           eyebrow="Our Story"
           title={`About ${company.name}`}
-          subtitle="A UK-based group of specialist ventures delivering recruitment, HR, IT, immigration and cyber security solutions — with a global outlook."
+          subtitle="Founded in 2007 and headquartered in Birmingham, we bring four specialist companies together to support UK businesses and skilled professionals at every step."
           image={images.heroDark}
           breadcrumb={[
             { label: 'Home', to: '/' },
@@ -35,7 +34,6 @@ const About = () => {
         <Timeline />
         <GroupStructure />
         <CoreValues />
-        <TeamSection />
         <GlobalPresence />
         <CTABanner />
       </main>

@@ -30,10 +30,10 @@ const CompanyStory = () => {
                   <div className="relative p-6 sm:p-8">
                     <Quote className="mb-4 h-8 w-8 text-teal-light" aria-hidden="true" />
                     <p className="text-lg font-heading font-semibold leading-relaxed">
-                      {company.mission}
+                      {company.belief}
                     </p>
                     <p className="mt-4 text-sm uppercase tracking-widest text-slate-500">
-                      Our Mission
+                      What We Believe
                     </p>
                   </div>
                 </div>
@@ -47,20 +47,24 @@ const CompanyStory = () => {
                 Our Story
               </span>
               <h2 className="text-3xl font-bold leading-tight font-heading text-navy sm:text-4xl lg:text-5xl">
-                Building trusted solutions since 2007
+                Built in Birmingham. Serving the world.
               </h2>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-600">
                 <p>
-                  Founded in 2007, e2e World Group was established with a vision
-                  to provide comprehensive talent and management solutions to
-                  local businesses in the UK.
+                  Founded in 2007 and headquartered in Birmingham, e2e World
+                  Group was established with a vision to provide comprehensive
+                  talent and management solutions to local businesses in the UK.
                 </p>
-                <p>{company.description}</p>
                 <p>
-                  Today, our family of specialist ventures delivers integrated
-                  support across recruitment, HR, IT consulting, immigration,
-                  and cybersecurity — combining local expertise with a global
-                  outlook.
+                  We believe that bridging the talent gap requires more than
+                  processes. It demands holistic solutions that support skilled
+                  professionals throughout their entire journey — from
+                  recruitment to relocation, settlement and long-term success.
+                </p>
+                <p>
+                  Today, our four specialist companies — e2e HRC, e2e Infosys,
+                  elite PiC and e2e Cyber Solutions — support organisations and
+                  skilled professionals at every step.
                 </p>
               </div>
             </div>

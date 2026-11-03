@@ -1,9 +1,10 @@
-import { Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { Clock, ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
 import { Container, PageHero, Reveal, Seo } from '../components/common';
 import ContactForm from '../components/contact/ContactForm';
 import { LinkedInIcon } from '../components/layout/SocialIcons';
 import { contact } from '../data/site';
 import { contactSection } from '../data/homeContent';
+import ventures from '../data/ventures';
 
 const phoneHref = `tel:${contact.phone.replace(/\s|\(0\)/g, '')}`;
 
@@ -12,7 +13,7 @@ const Contact = () => {
     <>
       <Seo
         title="Contact Us"
-        description="Contact e2e World Group in Birmingham for recruitment, HR, IT, immigration, cyber security and digital support. Call, email or send an enquiry."
+        description="Contact e2e World Group in Birmingham for recruitment, HR, IT, immigration, digital marketing and cybersecurity support. Call, email or send an enquiry."
         path="/contact"
       />
       <main>
@@ -115,6 +116,100 @@ const Contact = () => {
                   </div>
                 </div>
               </Reveal>
+            </div>
+          </Container>
+        </section>
+
+        <section className="bg-white py-16 sm:py-20 lg:py-24">
+          <Container>
+            <Reveal className="mx-auto max-w-2xl text-center">
+              <span className="eyebrow">Company contacts</span>
+              <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+                Contact the companies directly
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
+                Prefer to go straight to a specialist team? Reach each of our
+                companies below, or use the form above and we will route you to
+                the right people.
+              </p>
+            </Reveal>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+              {ventures.map((venture) => (
+                <Reveal key={venture.slug} preset="fadeUp" className="h-full">
+                  <article className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[var(--shadow-card)] transition-shadow duration-300 hover:shadow-[var(--shadow-card-hover)]">
+                    <h3 className="font-heading text-xl font-extrabold tracking-tight text-navy">
+                      {venture.name}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      {venture.tagline}
+                    </p>
+
+                    {venture.contactInfo && (
+                      <ul className="mt-4 space-y-2.5 text-sm text-slate-600">
+                        {venture.contactInfo.phone && (
+                          <li className="flex items-start gap-2.5">
+                            <Phone
+                              size={16}
+                              className="mt-0.5 shrink-0"
+                              style={{ color: venture.color }}
+                              aria-hidden="true"
+                            />
+                            <a
+                              href={`tel:${venture.contactInfo.phone.replace(
+                                /\s/g,
+                                ''
+                              )}`}
+                              className="hover:underline"
+                            >
+                              {venture.contactInfo.phone}
+                            </a>
+                          </li>
+                        )}
+                        {venture.contactInfo.email && (
+                          <li className="flex items-start gap-2.5">
+                            <Mail
+                              size={16}
+                              className="mt-0.5 shrink-0"
+                              style={{ color: venture.color }}
+                              aria-hidden="true"
+                            />
+                            <a
+                              href={`mailto:${venture.contactInfo.email}`}
+                              className="break-all hover:underline"
+                            >
+                              {venture.contactInfo.email}
+                            </a>
+                          </li>
+                        )}
+                        {venture.contactInfo.address && (
+                          <li className="flex items-start gap-2.5">
+                            <MapPin
+                              size={16}
+                              className="mt-0.5 shrink-0"
+                              style={{ color: venture.color }}
+                              aria-hidden="true"
+                            />
+                            <span>{venture.contactInfo.address}</span>
+                          </li>
+                        )}
+                      </ul>
+                    )}
+
+                    <a
+                      href={venture.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center gap-1.5 border-t border-slate-100 pt-4 text-sm font-bold transition-opacity hover:opacity-80 focus-ring"
+                      style={{ color: venture.color }}
+                    >
+                      Visit {venture.name}
+                      <ExternalLink size={15} aria-hidden="true" />
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                  </article>
+                </Reveal>
+              ))}
             </div>
           </Container>
         </section>

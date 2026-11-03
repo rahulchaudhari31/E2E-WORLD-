@@ -41,12 +41,12 @@ const CTABanner = () => {
                   {company.tagline}
                 </p>
                 <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight text-white md:text-4xl lg:text-5xl">
-                  Ready to build your next chapter with us?
+                  Not sure which company you need?
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-white/85 md:text-base">
-                  Speak to our team about recruitment, HR, IT, immigration or
-                  digital needs. We will connect you with the right specialist
-                  venture.
+                  Tell us what you are working on. We will connect you with the
+                  right specialist company for recruitment, HR, IT, immigration
+                  or digital growth.
                 </p>
               </div>
 

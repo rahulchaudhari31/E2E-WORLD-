@@ -8,7 +8,7 @@ const NotFound = () => {
     <>
       <Seo
         title="Page Not Found"
-        description="The page you are looking for does not exist or has moved. Return to the e2e World Group home page or explore our ventures."
+        description="The page you are looking for does not exist or has moved. Return to the e2e World Group home page or explore our companies."
         path="/404"
         noindex
       />
@@ -76,7 +76,7 @@ const NotFound = () => {
                 Back to Home
               </Button>
               <Button to="/ventures" variant="outline" iconRight={ArrowRight}>
-                Explore Ventures
+                Explore Companies
               </Button>
             </div>
 

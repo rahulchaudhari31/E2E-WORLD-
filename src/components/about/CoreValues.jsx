@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import {
+  Globe2,
   Handshake,
   Lightbulb,
   Scale,
@@ -11,6 +12,7 @@ import { Container, Reveal, SectionHeading } from '../common';
 import { coreValues } from '../../data/site';
 
 const iconMap = {
+  Globe2,
   Handshake,
   Lightbulb,
   Scale,

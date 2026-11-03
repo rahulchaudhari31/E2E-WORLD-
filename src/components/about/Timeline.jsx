@@ -9,7 +9,7 @@ const Timeline = () => {
         <SectionHeading
           eyebrow="Our Journey"
           title="A timeline of growth"
-          subtitle="From our founding in Birmingham to a connected group of specialist ventures."
+          subtitle="From our founding in Birmingham to a connected group of four specialist companies."
         />
 
         <div className="relative mx-auto max-w-5xl">

@@ -3,6 +3,7 @@
  * four-line headline and an interactive solution finder.
  */
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
@@ -99,17 +100,25 @@ const HeroSection = () => {
             {heroContent.subtext}
           </p>
 
-          <a
-            href={heroContent.cta.href}
-            className="group mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-orange px-7 py-3.5 font-heading text-base font-bold text-navy shadow-[0_10px_30px_rgba(245,154,31,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-dark focus-ring"
-          >
-            {heroContent.cta.label}
-            <ArrowRight
-              size={18}
-              aria-hidden="true"
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </a>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <a
+              href={heroContent.cta.href}
+              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-orange px-7 py-3.5 font-heading text-base font-bold text-navy shadow-[0_10px_30px_rgba(245,154,31,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-dark focus-ring"
+            >
+              {heroContent.cta.label}
+              <ArrowRight
+                size={18}
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </a>
+            <Link
+              to={heroContent.secondaryCta.to}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-7 py-3.5 font-heading text-base font-bold text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 focus-ring"
+            >
+              {heroContent.secondaryCta.label}
+            </Link>
+          </div>
         </motion.div>
 
         <motion.div

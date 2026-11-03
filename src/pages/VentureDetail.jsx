@@ -1,6 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ExternalLink, MapPin } from 'lucide-react';
+import {
+  Check,
+  Clock,
+  ExternalLink,
+  Mail,
+  MapPin,
+  Phone,
+} from 'lucide-react';
 import {
   Badge,
   Button,
@@ -59,7 +66,7 @@ const VentureDetail = () => {
           themeColor={venture.color}
           breadcrumb={[
             { label: 'Home', to: '/' },
-            { label: 'Our Ventures', to: '/ventures' },
+            { label: 'Our Companies', to: '/ventures' },
             { label: venture.name },
           ]}
         />
@@ -188,6 +195,264 @@ const VentureDetail = () => {
           </div>
         </Container>
       </section>
+
+      {(venture.sectors ||
+        venture.process ||
+        venture.audiences ||
+        venture.whyChoose ||
+        venture.regulation ||
+        venture.contactInfo) && (
+        <section className="bg-white py-16 sm:py-20 lg:py-24">
+          <Container>
+            {venture.sectors && (
+              <div className="mx-auto max-w-4xl text-center">
+                <span
+                  className="text-sm font-semibold uppercase tracking-[0.18em]"
+                  style={{ color: venture.color }}
+                >
+                  Sectors we serve
+                </span>
+                <h2 className="mt-3 text-3xl font-bold font-heading text-navy sm:text-4xl">
+                  Where we work
+                </h2>
+                <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                  {venture.name} supports clients across a broad range of
+                  sectors, including:
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-2">
+                  {venture.sectors.map((sector) => (
+                    <Badge key={sector} color={venture.color}>
+                      {sector}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {venture.process && (
+              <div className={venture.sectors ? 'mt-16 sm:mt-20' : ''}>
+                <SectionHeading
+                  eyebrow="How It Works"
+                  title="Our process"
+                  subtitle={`How ${venture.name} works with you, step by step.`}
+                />
+                <div
+                  className={`grid gap-5 sm:grid-cols-2 ${
+                    venture.process.length >= 5
+                      ? 'lg:grid-cols-5'
+                      : 'lg:grid-cols-4'
+                  }`}
+                >
+                  {venture.process.map((step, index) => (
+                    <Reveal
+                      key={step.title}
+                      preset="fadeUp"
+                      delay={index * 0.05}
+                      className="h-full"
+                    >
+                      <article className="h-full rounded-2xl border border-slate-100 bg-offwhite p-6">
+                        <span
+                          className="flex h-10 w-10 items-center justify-center rounded-xl text-sm font-bold font-heading"
+                          style={{
+                            backgroundColor: `${venture.color}15`,
+                            color: venture.color,
+                          }}
+                        >
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <h3 className="mt-4 text-lg font-bold font-heading text-navy">
+                          {step.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                          {step.description}
+                        </p>
+                      </article>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {(venture.audiences ||
+              venture.whyChoose ||
+              venture.regulation ||
+              venture.contactInfo) && (
+              <div
+                className={
+                  venture.sectors || venture.process ? 'mt-16 sm:mt-20' : ''
+                }
+              >
+                <div className="grid gap-6 md:grid-cols-2">
+                  {venture.audiences?.map((audience) => (
+                    <Reveal key={audience.title} preset="fadeUp" className="h-full">
+                      <article className="flex h-full flex-col rounded-2xl border border-slate-100 bg-offwhite p-6 sm:p-8">
+                        <span
+                          className="text-xs font-semibold uppercase tracking-[0.18em]"
+                          style={{ color: venture.color }}
+                        >
+                          {audience.label}
+                        </span>
+                        <h3 className="mt-3 text-2xl font-bold font-heading text-navy">
+                          {audience.title}
+                        </h3>
+                        <p className="mt-3 flex-1 text-base leading-relaxed text-slate-600">
+                          {audience.description}
+                        </p>
+                        {audience.cta && (
+                          <Button
+                            to={audience.cta.to}
+                            variant="ghost"
+                            size="sm"
+                            className="mt-5 self-start"
+                          >
+                            {audience.cta.label}
+                          </Button>
+                        )}
+                      </article>
+                    </Reveal>
+                  ))}
+
+                  {venture.whyChoose && (
+                    <Reveal preset="fadeUp" className="h-full">
+                      <article className="h-full rounded-2xl border border-slate-100 bg-offwhite p-6 sm:p-8">
+                        <span
+                          className="text-xs font-semibold uppercase tracking-[0.18em]"
+                          style={{ color: venture.color }}
+                        >
+                          Why choose us
+                        </span>
+                        <h3 className="mt-3 text-2xl font-bold font-heading text-navy">
+                          What sets us apart
+                        </h3>
+                        <ul className="mt-5 space-y-3">
+                          {venture.whyChoose.map((point) => (
+                            <li key={point} className="flex gap-3">
+                              <Check
+                                size={18}
+                                className="mt-0.5 shrink-0"
+                                style={{ color: venture.color }}
+                                aria-hidden="true"
+                              />
+                              <span className="text-sm leading-relaxed text-slate-600">
+                                {point}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                    </Reveal>
+                  )}
+
+                  {venture.regulation && (
+                    <Reveal preset="fadeUp" className="h-full">
+                      <article className="h-full rounded-2xl border border-slate-100 bg-offwhite p-6 sm:p-8">
+                        <span
+                          className="text-xs font-semibold uppercase tracking-[0.18em]"
+                          style={{ color: venture.color }}
+                        >
+                          Regulation
+                        </span>
+                        <h3 className="mt-3 text-2xl font-bold font-heading text-navy">
+                          Approved advice
+                        </h3>
+                        <p className="mt-3 text-base leading-relaxed text-slate-600">
+                          {venture.regulation}
+                        </p>
+                      </article>
+                    </Reveal>
+                  )}
+
+                  {venture.contactInfo && (
+                    <Reveal preset="fadeUp" className="h-full">
+                      <article className="h-full rounded-2xl border border-slate-100 bg-offwhite p-6 sm:p-8">
+                        <span
+                          className="text-xs font-semibold uppercase tracking-[0.18em]"
+                          style={{ color: venture.color }}
+                        >
+                          Contact details
+                        </span>
+                        <h3 className="mt-3 text-2xl font-bold font-heading text-navy">
+                          Get in touch directly
+                        </h3>
+                        <ul className="mt-5 space-y-3 text-sm text-slate-600">
+                          {venture.contactInfo.address && (
+                            <li className="flex gap-3">
+                              <MapPin
+                                size={17}
+                                className="mt-0.5 shrink-0"
+                                style={{ color: venture.color }}
+                                aria-hidden="true"
+                              />
+                              <span>{venture.contactInfo.address}</span>
+                            </li>
+                          )}
+                          {venture.contactInfo.phone && (
+                            <li className="flex gap-3">
+                              <Phone
+                                size={17}
+                                className="mt-0.5 shrink-0"
+                                style={{ color: venture.color }}
+                                aria-hidden="true"
+                              />
+                              <a
+                                href={`tel:${venture.contactInfo.phone.replace(
+                                  /\s/g,
+                                  ''
+                                )}`}
+                                className="hover:underline"
+                              >
+                                {venture.contactInfo.phone}
+                              </a>
+                            </li>
+                          )}
+                          {venture.contactInfo.email && (
+                            <li className="flex gap-3">
+                              <Mail
+                                size={17}
+                                className="mt-0.5 shrink-0"
+                                style={{ color: venture.color }}
+                                aria-hidden="true"
+                              />
+                              <a
+                                href={`mailto:${venture.contactInfo.email}`}
+                                className="hover:underline"
+                              >
+                                {venture.contactInfo.email}
+                              </a>
+                            </li>
+                          )}
+                          {venture.contactInfo.hours && (
+                            <li className="flex gap-3">
+                              <Clock
+                                size={17}
+                                className="mt-0.5 shrink-0"
+                                style={{ color: venture.color }}
+                                aria-hidden="true"
+                              />
+                              <span>{venture.contactInfo.hours}</span>
+                            </li>
+                          )}
+                        </ul>
+                        {venture.externalUrl && (
+                          <Button
+                            href={venture.externalUrl}
+                            variant="ghost"
+                            size="sm"
+                            iconRight={ExternalLink}
+                            className="mt-5"
+                          >
+                            Visit official website
+                          </Button>
+                        )}
+                      </article>
+                    </Reveal>
+                  )}
+                </div>
+              </div>
+            )}
+          </Container>
+        </section>
+      )}
 
       <section className="relative overflow-hidden bg-navy py-14 sm:py-16">
         <div

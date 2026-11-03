@@ -70,7 +70,7 @@ const VentureNode = ({ venture }) => {
           className="mt-auto inline-flex items-center gap-1 pt-4 text-xs font-semibold"
           style={{ color: venture.color }}
         >
-          Explore venture
+          Explore company
           <ArrowRight
             size={14}
             className="transition-transform duration-300 group-hover:translate-x-1"
@@ -88,8 +88,8 @@ const GroupStructure = () => {
       <Container>
         <SectionHeading
           eyebrow="Our Group"
-          title="One group. Four specialist ventures."
-          subtitle="A connected family of businesses working together to support every stage of your growth."
+          title="One group. Four specialist companies."
+          subtitle="A connected family of businesses working together to support every stage of your journey — from hiring to growth."
         />
 
         <Reveal preset="fadeUp">

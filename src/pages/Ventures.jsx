@@ -9,19 +9,19 @@ const Ventures = () => {
   return (
     <>
       <Seo
-        title="Our Ventures"
-        description="Explore the four specialist e2e World Group ventures covering recruitment and HR, technical hiring and IT, immigration advisory, and cyber security."
+        title="Our Companies"
+        description="Explore the four e2e World Group companies covering recruitment and HR, technical hiring and IT, immigration advisory, and digital marketing and cybersecurity."
         path="/ventures"
       />
       <main>
         <PageHero
           eyebrow="Our Companies"
-          title="Our Ventures"
-          subtitle="Four specialist companies working as one connected group — covering recruitment, technical hiring, immigration and digital security."
+          title="Four companies. One group."
+          subtitle="e2e HRC, e2e Infosys, elite PiC and e2e Cyber Solutions work together as one connected group, covering every stage from hiring to growth."
           image={images.cityscape}
           breadcrumb={[
             { label: 'Home', to: '/' },
-            { label: 'Our Ventures' },
+            { label: 'Our Companies' },
           ]}
         />
 
@@ -32,7 +32,7 @@ const Ventures = () => {
                 {company.description}
               </p>
               <p className="mt-4 text-slate-500">
-                Each venture has its own specialist focus, but every team shares
+                Each company has its own specialist focus, but every team shares
                 the same commitment to practical expertise, compliance and
                 long-term partnership.
               </p>
