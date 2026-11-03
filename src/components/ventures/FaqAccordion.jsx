@@ -29,7 +29,7 @@ const FaqAccordion = ({ items, color = '#2563EB' }) => {
                 </span>
                 <span
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
-                    isOpen ? 'text-white' : 'bg-slate-100 text-slate-500'
+                    isOpen ? 'text-white' : 'bg-slate-100 text-slate-600'
                   }`}
                   style={isOpen ? { backgroundColor: color } : undefined}
                 >

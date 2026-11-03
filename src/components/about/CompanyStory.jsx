@@ -32,7 +32,7 @@ const CompanyStory = () => {
                     <p className="text-lg font-heading font-semibold leading-relaxed">
                       {company.mission}
                     </p>
-                    <p className="mt-4 text-sm uppercase tracking-widest text-slate-400">
+                    <p className="mt-4 text-sm uppercase tracking-widest text-slate-500">
                       Our Mission
                     </p>
                   </div>

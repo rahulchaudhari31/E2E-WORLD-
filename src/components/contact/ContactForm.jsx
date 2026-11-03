@@ -18,6 +18,7 @@ import {
 
 import { Button } from '../common';
 import { contactSubjects } from '../../data/site';
+import { contactSection } from '../../data/homeContent';
 import sendContact from '../../utils/sendContact';
 
 const initialValues = {
@@ -53,7 +54,7 @@ const validate = (values) => {
 };
 
 const inputBase =
-  'w-full rounded-xl border bg-white px-4 py-3 text-sm text-navy outline-none transition-colors placeholder:text-slate-400 focus:ring-4';
+  'w-full rounded-xl border bg-white px-4 py-3 text-sm text-navy outline-none transition-colors placeholder:text-slate-500 focus:ring-4';
 const inputNormal =
   'border-slate-200 focus:border-accent focus:ring-accent/10';
 const inputError = 'border-red-300 focus:border-red-400 focus:ring-red-100';
@@ -66,11 +67,15 @@ const FieldError = ({ id, children }) => (
 
 /**
  * @param {object} props
- * @param {'compact'|'full'} [props.variant='compact'] Show the extra phone/subject fields.
+ * @param {'compact'|'full'|'home'} [props.variant='compact'] Show the extra phone/subject fields or interest chips.
  */
 const ContactForm = ({ variant = 'compact' }) => {
   const withDetails = variant === 'full';
-  const [values, setValues] = useState(initialValues);
+  const withInterests = variant === 'home';
+  const initialFormValues = withInterests
+    ? { ...initialValues, subject: contactSection.interests[0].subject }
+    : initialValues;
+  const [values, setValues] = useState(initialFormValues);
   const [errors, setErrors] = useState({});
   const [submitError, setSubmitError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -127,7 +132,7 @@ const ContactForm = ({ variant = 'compact' }) => {
   };
 
   const resetForm = () => {
-    setValues(initialValues);
+    setValues(initialFormValues);
     setErrors({});
     setSubmitError('');
     setSubmitted(false);
@@ -199,7 +204,46 @@ const ContactForm = ({ variant = 'compact' }) => {
             />
           </div>
 
-          <div className={withDetails ? 'grid gap-5 sm:grid-cols-2' : 'space-y-5'}>
+          {withInterests && (
+            <fieldset>
+              <legend className="mb-2 block text-sm font-semibold text-navy">
+                I&apos;m interested in
+              </legend>
+              <div className="flex flex-wrap gap-2">
+                {contactSection.interests.map((interest) => {
+                  const isActive = values.subject === interest.subject;
+                  return (
+                    <button
+                      key={interest.label}
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() =>
+                        setValues((current) => ({
+                          ...current,
+                          subject: interest.subject,
+                        }))
+                      }
+                      className={`rounded-full border px-3.5 py-2 text-xs font-semibold transition-all duration-200 focus-ring ${
+                        isActive
+                          ? 'border-orange bg-orange text-navy'
+                          : 'border-slate-200 bg-white text-navy hover:border-blue hover:text-blue'
+                      }`}
+                    >
+                      {interest.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </fieldset>
+          )}
+
+          <div
+            className={
+              withDetails || withInterests
+                ? 'grid gap-5 sm:grid-cols-2'
+                : 'space-y-5'
+            }
+          >
             <div>
               <label
                 htmlFor="contact-name"
@@ -273,7 +317,7 @@ const ContactForm = ({ variant = 'compact' }) => {
                   className="mb-2 block text-sm font-semibold text-navy"
                 >
                   Phone{' '}
-                  <span className="font-normal text-slate-400">(optional)</span>
+                  <span className="font-normal text-muted">(optional)</span>
                 </label>
                 <div className="relative">
                   <Phone
@@ -351,7 +395,7 @@ const ContactForm = ({ variant = 'compact' }) => {
             <textarea
               id="contact-message"
               name="message"
-              rows={withDetails ? 6 : 5}
+              rows={withDetails ? 6 : 4}
               value={values.message}
               onChange={handleChange}
               placeholder="How can we help?"
@@ -371,7 +415,7 @@ const ContactForm = ({ variant = 'compact' }) => {
 
           <Button
             type="submit"
-            variant="primary"
+            variant={withInterests ? 'navy' : 'primary'}
             disabled={loading}
             className="w-full disabled:cursor-not-allowed disabled:opacity-70"
           >
@@ -388,7 +432,7 @@ const ContactForm = ({ variant = 'compact' }) => {
             )}
           </Button>
 
-          <p className="text-center text-xs text-slate-400">
+          <p className="text-center text-xs text-muted">
             Fields marked <span className="text-accent">*</span> are required.
           </p>
         </motion.form>

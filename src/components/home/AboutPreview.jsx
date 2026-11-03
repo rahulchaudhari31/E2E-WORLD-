@@ -1,111 +1,70 @@
 /**
- * AboutPreview — Split image/content introduction to the group.
+ * AboutPreview — Group story with animated stat tiles.
  */
-import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
-import images from '../../data/images';
-import { company } from '../../data/site';
-import {
-  Button,
-  Container,
-  ImageWithFallback,
-  Reveal,
-  SectionHeading,
-} from '../common';
+import { AnimatedCounter, Container, Reveal } from '../common';
+import { aboutSection } from '../../data/homeContent';
+
+const toneClasses = {
+  orange: 'bg-orange text-navy',
+  blue: 'bg-blue text-white',
+  lime: 'bg-lime text-navy',
+  navy: 'bg-navy text-white',
+};
 
 const AboutPreview = () => {
+  const { eyebrow, heading, paragraph, cta, stats } = aboutSection;
+
   return (
-    <section aria-label="About e2e World Group" className="bg-white py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          {/* Image collage */}
-          <Reveal preset="fadeLeft" className="relative mx-auto w-full max-w-xl lg:max-w-none">
-            <div className="relative">
-              <div className="overflow-hidden rounded-3xl shadow-[0_24px_70px_rgba(11,31,58,0.18)]">
-                <ImageWithFallback
-                  src={images.office}
-                  alt="The e2e World Group office"
-                  className="aspect-[4/3] w-full"
-                />
-              </div>
-
-              <div className="absolute -bottom-8 -right-2 hidden w-44 overflow-hidden rounded-2xl border-4 border-white shadow-2xl sm:block md:w-56">
-                <ImageWithFallback
-                  src={images.teamMeeting}
-                  alt="The e2e World Group team in a meeting"
-                  className="aspect-square w-full"
-                />
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.6 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="absolute -left-3 -top-5 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl md:-left-6"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                  <Sparkles size={18} aria-hidden="true" />
-                </span>
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                    Founded
-                  </p>
-                  <p className="font-heading text-xl font-extrabold leading-none text-navy">
-                    {company.founded}
-                  </p>
-                </div>
-              </motion.div>
-            </div>
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
+          <Reveal preset="fadeRight">
+            <span className="eyebrow">{eyebrow}</span>
+            <h2 className="mt-3 max-w-xl font-heading text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
+              {heading.before}
+              <span className="text-blue">{heading.accent}</span>
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
+              {paragraph}
+            </p>
+            <Link
+              to={cta.to}
+              className="group mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-navy px-7 py-3.5 font-heading text-base font-bold text-white shadow-[0_10px_24px_rgba(11,42,74,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-light focus-ring"
+            >
+              {cta.label}
+              <ArrowRight
+                size={18}
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
           </Reveal>
 
-          {/* Copy */}
-          <Reveal preset="fadeRight" delay={0.1}>
-            <SectionHeading
-              eyebrow="About e2e World Group"
-              title="A trusted partner for businesses that think beyond borders."
-              align="left"
-              className="mb-6 md:mb-8"
-            />
-
-            <p className="text-base leading-relaxed text-slate-600">
-              {company.description}
-            </p>
-
-            <div className="mt-7 rounded-2xl border border-slate-100 bg-slate-50/80 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                Our vision
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                {company.vision}
-              </p>
-            </div>
-
-            <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-              {[
-                'UK Head Office in Birmingham',
-                'Global footprint across five regions',
-                'Four specialist group ventures',
-                'End-to-end service delivery',
-              ].map((point) => (
-                <li
-                  key={point}
-                  className="flex items-start gap-2.5 text-sm font-medium text-slate-600"
+          <Reveal preset="fadeLeft" delay={0.1}>
+            <div className="grid grid-cols-2 gap-4 sm:gap-5">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className={`flex min-h-36 flex-col justify-between rounded-2xl p-5 shadow-[var(--shadow-card)] sm:min-h-44 sm:p-6 ${
+                    toneClasses[stat.tone] || toneClasses.blue
+                  }`}
                 >
-                  <CheckCircle2
-                    size={18}
-                    aria-hidden="true"
-                    className="mt-0.5 shrink-0 text-teal"
-                  />
-                  {point}
-                </li>
+                  <span className="font-heading text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
+                    {typeof stat.value === 'number' ? (
+                      <AnimatedCounter value={stat.value} />
+                    ) : (
+                      stat.value
+                    )}
+                  </span>
+                  <span className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] opacity-80 sm:text-sm">
+                    {stat.label}
+                  </span>
+                </div>
               ))}
-            </ul>
-
-            <Button to="/about" variant="primary" className="mt-8" iconRight={ArrowRight}>
-              Learn More About Us
-            </Button>
+            </div>
           </Reveal>
         </div>
       </Container>

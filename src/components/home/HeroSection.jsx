@@ -1,79 +1,39 @@
 /**
- * HeroSection — Full-screen hero with typed specialties and floating glass cards.
+ * HeroSection — Full-bleed image hero with a solid blue overlay,
+ * four-line headline and an interactive solution finder.
  */
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, useReducedMotion } from 'framer-motion';
-import {
-  ArrowRight,
-  ChevronDown,
-  Globe2,
-  ShieldCheck,
-  Sparkles,
-  Users,
-} from 'lucide-react';
+import { useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
-import { Button, Container } from '../common';
-import { company, hero } from '../../data/site';
-import { heroHighlights, rotatingWords } from '../../data/home';
-
-const iconMap = { Users, Globe2, ShieldCheck };
-
-const TYPE_SPEED = 75;
-const DELETE_SPEED = 40;
-const PAUSE = 1500;
-
-const useTypewriter = (enabled = true) => {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    if (!enabled) return undefined;
-
-    const word = rotatingWords[wordIndex];
-
-    if (!deleting && subIndex === word.length) {
-      const timeout = window.setTimeout(() => setDeleting(true), PAUSE);
-      return () => window.clearTimeout(timeout);
-    }
-
-    if (deleting && subIndex === 0) {
-      const timeout = window.setTimeout(() => {
-        setDeleting(false);
-        setWordIndex((index) => (index + 1) % rotatingWords.length);
-      }, DELETE_SPEED);
-
-      return () => window.clearTimeout(timeout);
-    }
-
-    const timeout = window.setTimeout(
-      () => setSubIndex((index) => index + (deleting ? -1 : 1)),
-      deleting ? DELETE_SPEED : TYPE_SPEED,
-    );
-
-    return () => window.clearTimeout(timeout);
-  }, [deleting, enabled, subIndex, wordIndex]);
-
-  return enabled
-    ? rotatingWords[wordIndex].substring(0, subIndex)
-    : rotatingWords[0];
-};
+import { Container } from '../common';
+import { heroContent } from '../../data/homeContent';
+import { hero } from '../../data/site';
 
 const HeroSection = () => {
   const reduceMotion = useReducedMotion();
-  const typed = useTypewriter(!reduceMotion);
+  const [activeId, setActiveId] = useState(heroContent.finder.options[0].id);
 
-  const scrollToVentures = () => {
-    document.getElementById('ventures')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  };
+  const activeOption =
+    heroContent.finder.options.find((option) => option.id === activeId) ||
+    heroContent.finder.options[0];
+
+  const float = (distance, duration, delay = 0) =>
+    reduceMotion
+      ? undefined
+      : {
+          y: [0, -distance, 0],
+          transition: {
+            duration,
+            delay,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          },
+        };
 
   return (
-    <section className="relative flex min-h-[calc(100vh-var(--nav-height))] items-center overflow-hidden bg-navy">
-      {/* Background image + overlays */}
+    <section className="relative isolate flex min-h-[calc(100vh-var(--nav-height))] items-center overflow-hidden bg-blue">
+      {/* Full-bleed background image — existing asset, unchanged */}
       <img
         src={hero.image}
         alt=""
@@ -82,154 +42,146 @@ const HeroSection = () => {
         fetchpriority="high"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-navy/40" />
+
+      {/* Solid blue overlay */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 78% 22%, rgba(20,184,166,0.22), transparent 42%), radial-gradient(circle at 10% 85%, rgba(37,99,235,0.28), transparent 38%)',
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)',
-          backgroundSize: '64px 64px',
-        }}
+        className="absolute inset-0"
+        style={{ backgroundColor: 'rgba(31, 119, 192, 0.88)' }}
       />
 
-      <Container className="relative z-10 grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.12fr_0.88fr] lg:gap-10">
+      {/* Decorative flat circles */}
+      <motion.div
+        aria-hidden="true"
+        animate={float(14, 9)}
+        className="pointer-events-none absolute -right-24 -top-28 h-72 w-72 rounded-full bg-orange sm:-right-32 sm:-top-32 sm:h-[26rem] sm:w-[26rem] lg:-right-24 lg:-top-40 lg:h-[32rem] lg:w-[32rem]"
+      />
+      <motion.div
+        aria-hidden="true"
+        animate={float(10, 11, 0.6)}
+        className="pointer-events-none absolute right-[28%] top-16 hidden h-16 w-16 rounded-full bg-sky/30 sm:block lg:h-20 lg:w-20"
+      />
+      <motion.div
+        aria-hidden="true"
+        animate={float(16, 10, 0.3)}
+        className="pointer-events-none absolute -bottom-16 -left-16 h-52 w-52 rounded-full bg-lime sm:-bottom-20 sm:-left-20 sm:h-64 sm:w-64 lg:h-72 lg:w-72"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[18%] left-[42%] hidden h-10 w-10 rounded-full bg-white/10 lg:block"
+      />
+
+      <Container className="relative z-10 grid items-center gap-12 py-16 md:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:py-24">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-xl"
         >
-          <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 backdrop-blur">
-            <Sparkles size={15} className="shrink-0 text-teal-light" aria-hidden="true" />
-            <span className="sr-only">
-              Experts in Recruitment, IT Consulting, Immigration and Cyber Security.
-            </span>
-            <span aria-hidden="true" className="text-sm text-slate-200">
-              Experts in{' '}
-              <span className="inline-block min-w-[8.5rem] font-heading font-semibold text-white">
-                {typed}
-                <span className="ml-0.5 inline-block h-[1em] w-[2px] translate-y-[2px] animate-pulse bg-teal-light" />
-              </span>
-            </span>
-          </div>
+          <span className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-white">
+            {heroContent.eyebrow}
+          </span>
 
-          <h1 className="mt-6 max-w-3xl font-heading text-4xl font-extrabold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
-            Comprehensive{' '}
-            <span className="text-teal-light">talent &amp; management</span>{' '}
-            solutions for a connected world.
+          <h1 className="mt-5 font-heading text-[2.9rem] font-extrabold leading-[0.92] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+            {heroContent.headline.map((line) => (
+              <span
+                key={line.text}
+                className={`block ${
+                  line.color === 'orange' ? 'text-orange' : 'text-white'
+                }`}
+              >
+                {line.text}
+              </span>
+            ))}
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
-            {company.mission}
+          <p className="mt-6 max-w-md text-base leading-relaxed text-white sm:text-lg">
+            {heroContent.subtext}
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button
-              type="button"
-              onClick={scrollToVentures}
-              size="lg"
-              variant="primary"
-              iconRight={ArrowRight}
-            >
-              Explore Our Ventures
-            </Button>
-
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-button)] border border-white/25 bg-white/5 px-8 py-4 font-heading text-lg font-semibold text-white backdrop-blur transition-colors duration-300 hover:border-white/50 hover:bg-white/10 focus-ring"
-            >
-              Get in Touch
-            </Link>
-          </div>
-
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-            Since 2007 <span className="mx-2 text-teal">•</span> 4 specialist
-            ventures <span className="mx-2 text-teal">•</span> 5 global regions
-          </p>
+          <a
+            href={heroContent.cta.href}
+            className="group mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-orange px-7 py-3.5 font-heading text-base font-bold text-navy shadow-[0_10px_30px_rgba(245,154,31,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-dark focus-ring"
+          >
+            {heroContent.cta.label}
+            <ArrowRight
+              size={18}
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </a>
         </motion.div>
 
-        {/* Floating glass cards */}
         <motion.div
-          initial={{ opacity: 0, x: 36 }}
+          initial={{ opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto hidden w-full max-w-md lg:block"
+          transition={{
+            duration: 0.9,
+            delay: 0.2,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="relative mx-auto w-full max-w-md lg:ml-auto"
         >
-          <div
-            aria-hidden="true"
-            className="absolute -inset-6 rounded-[2.5rem] border border-white/10"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute -right-8 -top-8 h-40 w-40 rounded-full border border-teal/20"
-          />
+          <div className="rounded-2xl border border-white/40 bg-white p-5 shadow-[0_30px_70px_rgba(7,28,51,0.28)] sm:p-7">
+            <span className="eyebrow">{heroContent.finder.eyebrow}</span>
+            <h2 className="mt-2 font-heading text-2xl font-extrabold tracking-tight text-navy">
+              {heroContent.finder.title}
+            </h2>
 
-          <div className="relative space-y-4">
-            {heroHighlights.map((item, index) => {
-              const Icon = iconMap[item.icon] || Globe2;
-              return (
-                <motion.div
-                  key={item.title}
-                  animate={{ y: [0, index % 2 === 0 ? -8 : 8, 0] }}
-                  transition={{
-                    duration: 5 + index,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: index * 0.5,
-                  }}
-                  className={`glass rounded-2xl p-5 shadow-2xl ${
-                    index === 1 ? 'ml-10' : index === 2 ? 'ml-4' : ''
-                  }`}
+            <div className="mt-5 flex flex-wrap gap-2">
+              {heroContent.finder.options.map((option) => {
+                const isActive = option.id === activeId;
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    aria-pressed={isActive}
+                    onClick={() => setActiveId(option.id)}
+                    className={`rounded-full border px-3.5 py-2 text-xs font-semibold transition-all duration-200 focus-ring sm:text-sm ${
+                      isActive
+                        ? 'border-orange bg-orange text-navy shadow-sm'
+                        : 'border-slate-200 bg-white text-navy hover:border-blue hover:text-blue'
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={activeOption.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-5 rounded-2xl bg-orange p-5 text-navy"
+              >
+                <span className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-navy">
+                  {heroContent.finder.recommendLabel}
+                </span>
+                <p className="mt-1.5 font-heading text-xl font-extrabold">
+                  {activeOption.company}
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-navy">
+                  {activeOption.description}
+                </p>
+                <a
+                  href={activeOption.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-navy underline decoration-navy/30 underline-offset-4 transition-colors hover:decoration-navy focus-ring"
                 >
-                  <div className="flex items-start gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-teal-light ring-1 ring-white/15">
-                      <Icon size={20} aria-hidden="true" />
-                    </span>
-                    <div>
-                      <p className="font-heading text-base font-bold text-white">
-                        {item.title}
-                      </p>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-300">
-                        {item.text}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  Visit website
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </motion.div>
       </Container>
-
-      {/* Scroll indicator */}
-      <motion.a
-        href="#trust"
-        aria-label="Scroll to trust highlights"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/60 transition-colors hover:text-white focus-ring sm:flex"
-      >
-        <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">
-          Scroll
-        </span>
-        <motion.span
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex h-9 w-6 items-start justify-center rounded-full border border-white/30 p-1.5"
-        >
-          <ChevronDown size={14} aria-hidden="true" />
-        </motion.span>
-      </motion.a>
     </section>
   );
 };

@@ -38,7 +38,7 @@ const ImageWithFallback = ({
           aria-hidden="true"
         >
           {failed && (
-            <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-center text-slate-400">
+            <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-center text-slate-500">
               <ImageOff size={28} strokeWidth={1.5} />
               <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">
                 Image unavailable

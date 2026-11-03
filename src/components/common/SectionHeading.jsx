@@ -43,7 +43,7 @@ const SectionHeading = ({
         </span>
       )}
       <h2
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold font-heading leading-tight ${
+        className={`text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading leading-[1.08] tracking-tight ${
           light ? 'text-white' : 'text-navy'
         }`}
       >

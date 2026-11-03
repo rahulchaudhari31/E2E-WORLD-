@@ -146,7 +146,7 @@ const ServicesTabs = () => {
                   </span>
                   <div>
                     <Badge color={venture.color}>{activeTab.label}</Badge>
-                    <p className="mt-1 text-xs font-medium text-slate-400">
+                    <p className="mt-1 text-xs font-medium text-slate-500">
                       {venture.name}
                     </p>
                   </div>

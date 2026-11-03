@@ -100,7 +100,7 @@ const NeedFinder = () => {
                     </span>
                     <span
                       className={`mt-1 block text-xs ${
-                        isActive ? 'text-white/75' : 'text-slate-400'
+                        isActive ? 'text-white/90' : 'text-slate-500'
                       }`}
                     >
                       Recommended: {venture?.name}
@@ -132,7 +132,7 @@ const NeedFinder = () => {
                     <RecommendedIcon size={23} aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                       Recommended venture
                     </p>
                     <h3 className="mt-1 text-xl font-bold font-heading text-navy">

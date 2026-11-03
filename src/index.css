@@ -1,58 +1,80 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 /* ============================================================
    e2e World Group — Design System
+   Colours sampled from the reference design.
    ============================================================ */
 
 /* ---------- Custom Theme (Tailwind v4 CSS-first config) ----- */
 @theme {
-  /* Colors */
-  --color-navy: #0B1F3A;
-  --color-navy-light: #132D54;
-  --color-navy-dark: #071428;
-  --color-accent: #2563EB;
-  --color-accent-light: #3B82F6;
-  --color-accent-dark: #1D4ED8;
-  --color-teal: #14B8A6;
-  --color-teal-light: #2DD4BF;
-  --color-teal-dark: #0D9488;
-  --color-offwhite: #F8FAFC;
-  --color-slate-50: #F8FAFC;
-  --color-slate-100: #F1F5F9;
-  --color-slate-200: #E2E8F0;
-  --color-slate-300: #CBD5E1;
-  --color-slate-400: #94A3B8;
-  --color-slate-500: #64748B;
+  /* Brand colours */
+  --color-blue: #1f77c0;
+  --color-blue-light: #4a97d4;
+  --color-blue-dark: #155f9c;
+  --color-orange: #f59a1f;
+  --color-orange-light: #f7b455;
+  --color-orange-dark: #d9820a;
+  --color-lime: #b7dc8b;
+  --color-lime-dark: #6fa33e;
+  --color-navy: #0b2a4a;
+  --color-navy-light: #123b66;
+  --color-navy-dark: #071c33;
+
+  /* Section tints */
+  --color-sky: #eaf2fb;
+  --color-cream: #fef3e3;
+  --color-mint: #e8f3dd;
+
+  /* Neutral text */
+  --color-ink: #0b2a4a;
+  --color-muted: #5b6b7c;
+
+  /* Legacy aliases used by the inner pages */
+  --color-accent: #1f77c0;
+  --color-accent-light: #4a97d4;
+  --color-accent-dark: #155f9c;
+  --color-teal: #6fa33e;
+  --color-teal-light: #b7dc8b;
+  --color-teal-dark: #557f2f;
+  --color-offwhite: #f8fbfe;
+
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
   --color-slate-600: #475569;
   --color-slate-700: #334155;
-  --color-slate-800: #1E293B;
-  --color-slate-900: #0F172A;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
 
   /* Fonts */
-  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
 
   /* Spacing */
   --spacing-section: 6rem;
   --spacing-section-sm: 4rem;
 
-  /* Border Radius */
+  /* Border radius */
   --radius-card: 1rem;
-  --radius-button: 0.625rem;
+  --radius-button: 9999px;
   --radius-badge: 9999px;
 
   /* Shadows */
-  --shadow-card: 0 4px 24px rgba(11, 31, 58, 0.08);
-  --shadow-card-hover: 0 8px 40px rgba(11, 31, 58, 0.14);
-  --shadow-button: 0 2px 8px rgba(37, 99, 235, 0.25);
+  --shadow-card: 0 4px 24px rgba(11, 42, 74, 0.08);
+  --shadow-card-hover: 0 18px 45px rgba(11, 42, 74, 0.16);
+  --shadow-button: 0 8px 20px rgba(245, 154, 31, 0.28);
 
-  /* Transitions */
+  /* Motion */
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ---------- Base Styles ------------------------------------ */
 :root {
-  --nav-height: 4rem;
+  --nav-height: 4.5rem;
 }
 
 @media (min-width: 768px) {
@@ -75,8 +97,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
-  color: var(--color-slate-800);
-  background-color: var(--color-offwhite);
+  color: var(--color-slate-600);
+  background-color: #ffffff;
   line-height: 1.7;
   overflow-x: clip;
 }
@@ -87,8 +109,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   color: var(--color-navy);
 }
 
@@ -97,15 +120,45 @@ a {
   text-decoration: none;
 }
 
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1.5rem);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
+::selection {
+  background: var(--color-orange);
+  color: var(--color-navy);
+}
+
 /* ---------- Utility Classes -------------------------------- */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-blue);
+}
+
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-teal) 100%);
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-lime) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -116,7 +169,7 @@ img {
 }
 
 .bg-accent-gradient {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-teal) 100%);
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-dark) 100%);
 }
 
 /* Glassmorphism utility */
@@ -132,8 +185,8 @@ img {
   outline: none;
 }
 .focus-ring:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
   border-radius: var(--radius-button);
 }
 
@@ -177,6 +230,24 @@ img {
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -217,11 +288,22 @@ img {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+    box-shadow: 0 0 0 0 rgba(31, 119, 192, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+    box-shadow: 0 0 0 12px rgba(31, 119, 192, 0);
   }
+}
+
+/* Marquee band */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
 }
 
 /* ---------- Reduced Motion --------------------------------- */
@@ -240,6 +322,10 @@ img {
   }
 
   .image-skeleton::after {
+    animation: none;
+  }
+
+  .marquee-track {
     animation: none;
   }
 }

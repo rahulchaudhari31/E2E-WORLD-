@@ -116,7 +116,7 @@ const VentureDetail = () => {
                   </p>
 
                   <div className="mt-6 rounded-2xl bg-white p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                       Regions covered
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">

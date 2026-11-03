@@ -1,130 +1,96 @@
 /**
- * ContactSection — Mini contact form alongside UK head office details.
+ * ContactSection — Light green contact band with details and the enquiry form.
  */
 import { Mail, MapPin, Phone } from 'lucide-react';
 
+import { Container, Reveal } from '../common';
 import ContactForm from '../contact/ContactForm';
-import { LinkedInIcon } from '../layout/SocialIcons';
 import { contact } from '../../data/site';
-import { Container, Reveal, SectionHeading } from '../common';
+import { contactSection } from '../../data/homeContent';
+
+const phoneHref = `tel:${contact.phone.replace(/\s|\(0\)/g, '')}`;
 
 const ContactSection = () => {
-  const phoneHref = `tel:${contact.phone.replace(/\s|\(0\)/g, '')}`;
+  const { eyebrow, heading, subtext } = contactSection;
 
   return (
-    <section id="contact" className="scroll-mt-[var(--nav-height)] bg-offwhite py-20 md:py-28">
+    <section
+      id="contact"
+      className="scroll-mt-[var(--nav-height)] bg-mint py-20 md:py-28"
+    >
       <Container>
-        <Reveal>
-          <SectionHeading
-            eyebrow="Contact Us"
-            title="Let's start a conversation."
-            subtitle="Tell us what you need and we'll connect you with the right specialist venture."
-            className="mb-12 md:mb-16"
-          />
-        </Reveal>
+        <div className="grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+          <Reveal preset="fadeRight">
+            <span className="eyebrow">{eyebrow}</span>
+            <h2 className="mt-3 max-w-lg font-heading text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
+              {heading.before}
+              <span className="text-blue">{heading.accent}</span>
+            </h2>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
+              {subtext}
+            </p>
 
-        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-          <Reveal preset="fadeLeft">
-            <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-[var(--shadow-card)] sm:p-8">
-              <h3 className="font-heading text-xl font-bold text-navy">
-                Send us a message
-              </h3>
-              <p className="mt-1.5 text-sm text-slate-500">
-                Share a few details and our team will get back to you.
-              </p>
-              <div className="mt-6">
-                <ContactForm />
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal preset="fadeRight" delay={0.1}>
-            <div className="relative flex h-full flex-col overflow-hidden rounded-3xl bg-navy-gradient p-6 text-white shadow-[var(--shadow-card)] sm:p-8">
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/25 blur-2xl"
-              />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-teal/10 blur-3xl"
-              />
-
-              <div className="relative">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-200">
-                  <MapPin size={12} aria-hidden="true" />
-                  UK Head Office
+            <address className="mt-8 space-y-5 not-italic">
+              <div className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-blue shadow-sm">
+                  <MapPin size={19} aria-hidden="true" />
                 </span>
-
-                <h3 className="mt-5 font-heading text-2xl font-bold text-white">
-                  Visit or call our Birmingham team.
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  Our head office supports employers and talent across the UK,
-                  Europe, the Middle East, South East Asia and South Asia.
-                </p>
-
-                <address className="mt-7 space-y-5 text-sm not-italic text-slate-300">
-                  <div className="flex gap-3">
-                    <MapPin
-                      size={18}
-                      aria-hidden="true"
-                      className="mt-0.5 shrink-0 text-teal-light"
-                    />
-                    <span className="leading-relaxed">
-                      {contact.address.line2}
-                      <br />
-                      {contact.address.line3}
-                      <br />
-                      {contact.address.postcode}, {contact.address.country}
-                    </span>
-                  </div>
-
-                  <a
-                    href={phoneHref}
-                    className="flex items-center gap-3 transition-colors hover:text-white focus-ring"
-                  >
-                    <Phone
-                      size={18}
-                      aria-hidden="true"
-                      className="shrink-0 text-teal-light"
-                    />
-                    {contact.phone}
-                  </a>
-
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="flex items-center gap-3 transition-colors hover:text-white focus-ring"
-                  >
-                    <Mail
-                      size={18}
-                      aria-hidden="true"
-                      className="shrink-0 text-teal-light"
-                    />
-                    {contact.email}
-                  </a>
-                </address>
-              </div>
-
-              <div className="relative mt-auto pt-8">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                    Group services
+                <div>
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-navy/80">
+                    Address
                   </p>
-                  <p className="mt-1.5 text-sm font-medium text-slate-200">
-                    Recruitment · HR · IT · Immigration · Cyber Security
+                  <p className="mt-1 max-w-xs text-sm font-semibold leading-relaxed text-navy sm:text-base">
+                    {contact.address.full}
                   </p>
                 </div>
+              </div>
 
-                <a
-                  href={contact.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-300 transition-colors hover:text-white focus-ring"
-                >
-                  <LinkedInIcon size={16} />
-                  Connect on LinkedIn
-                  <span className="sr-only">(opens in a new tab)</span>
-                </a>
+              <div className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-blue shadow-sm">
+                  <Phone size={19} aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-navy/80">
+                    Phone
+                  </p>
+                  <a
+                    href={phoneHref}
+                    className="mt-1 inline-flex min-h-8 items-center text-sm font-semibold text-navy transition-colors hover:text-blue focus-ring sm:text-base"
+                  >
+                    {contact.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-blue shadow-sm">
+                  <Mail size={19} aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-navy/80">
+                    Email
+                  </p>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="mt-1 inline-flex min-h-8 items-center break-all text-sm font-semibold text-navy transition-colors hover:text-blue focus-ring sm:text-base"
+                  >
+                    {contact.email}
+                  </a>
+                </div>
+              </div>
+            </address>
+          </Reveal>
+
+          <Reveal preset="fadeLeft" delay={0.1}>
+            <div className="rounded-2xl border border-white/60 bg-white p-6 shadow-[0_24px_60px_rgba(11,42,74,0.12)] sm:p-8">
+              <h3 className="font-heading text-xl font-extrabold tracking-tight text-navy">
+                Send us a message
+              </h3>
+              <p className="mt-1 text-sm text-muted">
+                Share a few details and the right team will get back to you.
+              </p>
+              <div className="mt-5">
+                <ContactForm variant="home" />
               </div>
             </div>
           </Reveal>

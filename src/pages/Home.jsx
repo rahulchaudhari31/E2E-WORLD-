@@ -1,13 +1,12 @@
 import { Seo } from '../components/common';
 import HeroSection from '../components/home/HeroSection';
-import TrustStrip from '../components/home/TrustStrip';
-import VenturesSection from '../components/home/VenturesSection';
+import MarqueeBand from '../components/home/MarqueeBand';
+import CompaniesSection from '../components/home/CompaniesSection';
+import ServicesSection from '../components/home/ServicesSection';
+import JourneySection from '../components/home/JourneySection';
 import AboutPreview from '../components/home/AboutPreview';
-import WhyChooseUs from '../components/home/WhyChooseUs';
-import StatsCounter from '../components/home/StatsCounter';
-import ServicesTabs from '../components/home/ServicesTabs';
-import LocationsSection from '../components/home/LocationsSection';
-import CTASection from '../components/home/CTASection';
+import GlobalPresenceSection from '../components/home/GlobalPresenceSection';
+import FaqSection from '../components/home/FaqSection';
 import ContactSection from '../components/home/ContactSection';
 import { company, contact, site } from '../data/site';
 
@@ -53,21 +52,20 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="End-to-End Recruitment, HR, IT, Immigration & Cyber Security"
+        title="Talent, Technology, Compliance & Growth"
         description={site.defaultDescription}
         path="/"
         jsonLd={[organizationSchema, websiteSchema]}
       />
       <main>
         <HeroSection />
-        <TrustStrip />
-        <VenturesSection />
+        <MarqueeBand />
+        <CompaniesSection />
+        <ServicesSection />
+        <JourneySection />
         <AboutPreview />
-        <WhyChooseUs />
-        <StatsCounter />
-        <ServicesTabs />
-        <LocationsSection />
-        <CTASection />
+        <GlobalPresenceSection />
+        <FaqSection />
         <ContactSection />
       </main>
     </>

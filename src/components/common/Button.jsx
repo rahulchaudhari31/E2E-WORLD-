@@ -16,6 +16,12 @@ const sizes = {
 const variants = {
   primary:
     'bg-accent text-white shadow-[var(--shadow-button)] hover:bg-accent-dark hover:shadow-lg active:scale-[0.97]',
+  blue:
+    'bg-blue text-white shadow-[0_8px_20px_rgba(31,119,192,0.28)] hover:bg-blue-dark hover:shadow-lg active:scale-[0.97]',
+  orange:
+    'bg-orange text-navy shadow-[0_8px_20px_rgba(245,154,31,0.32)] hover:bg-orange-dark hover:text-navy active:scale-[0.97]',
+  navy:
+    'bg-navy text-white shadow-[0_8px_20px_rgba(11,42,74,0.24)] hover:bg-navy-light hover:shadow-lg active:scale-[0.97]',
   outline:
     'border-2 border-accent text-accent bg-transparent hover:bg-accent hover:text-white active:scale-[0.97]',
   ghost:
@@ -27,7 +33,7 @@ const variants = {
 /**
  * @param {object} props
  * @param {React.ReactNode} props.children Button label and optional content.
- * @param {'primary'|'outline'|'ghost'|'white'} [props.variant='primary'] Visual style.
+ * @param {'primary'|'blue'|'orange'|'navy'|'outline'|'ghost'|'white'} [props.variant='primary'] Visual style.
  * @param {'sm'|'md'|'lg'} [props.size='md'] Control size.
  * @param {string} [props.href] External URL; opens in a new tab.
  * @param {string} [props.to] Internal React Router path.

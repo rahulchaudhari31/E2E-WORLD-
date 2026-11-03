@@ -140,7 +140,7 @@ const LocationsSection = () => {
                   <Globe2 size={17} className="text-teal-light" aria-hidden="true" />
                   Our global footprint
                 </div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                   {locations.length} regions
                 </span>
               </div>

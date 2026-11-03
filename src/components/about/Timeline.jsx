@@ -61,7 +61,7 @@ const Timeline = () => {
                         <span
                           className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold tracking-wide ${
                             item.placeholder
-                              ? 'bg-slate-100 text-slate-500'
+                              ? 'bg-slate-100 text-slate-600'
                               : 'bg-accent/10 text-accent'
                           }`}
                         >

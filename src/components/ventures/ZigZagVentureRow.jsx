@@ -43,7 +43,7 @@ const ZigZagVentureRow = ({ venture, reverse = false }) => {
               <Icon size={22} aria-hidden="true" />
             </span>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                 {venture.tagline}
               </p>
               <h2 className="mt-1 text-3xl font-bold font-heading text-navy sm:text-4xl">
@@ -57,7 +57,7 @@ const ZigZagVentureRow = ({ venture, reverse = false }) => {
           </p>
 
           <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               Key services
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -70,7 +70,7 @@ const ZigZagVentureRow = ({ venture, reverse = false }) => {
           </div>
 
           <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               Regions
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
