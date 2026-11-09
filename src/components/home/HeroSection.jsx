@@ -1,23 +1,25 @@
 /**
- * HeroSection — Full-bleed image hero with a solid blue overlay,
+ * HeroSection â€” Full-bleed image hero with a solid blue overlay,
  * four-line headline and an interactive solution finder.
  */
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 import { Container } from '../common';
+import useAutoRotate from '../../hooks/useAutoRotate';
 import { heroContent } from '../../data/homeContent';
 import { hero } from '../../data/site';
 
 const HeroSection = () => {
   const reduceMotion = useReducedMotion();
-  const [activeId, setActiveId] = useState(heroContent.finder.options[0].id);
+  const { activeIndex, select, pauseHandlers } = useAutoRotate(
+    heroContent.finder.options.length,
+    { interval: 1500 },
+  );
 
   const activeOption =
-    heroContent.finder.options.find((option) => option.id === activeId) ||
-    heroContent.finder.options[0];
+    heroContent.finder.options[activeIndex] || heroContent.finder.options[0];
 
   const float = (distance, duration, delay = 0) =>
     reduceMotion
@@ -34,7 +36,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative isolate flex min-h-[calc(100vh-var(--nav-height))] items-center overflow-hidden bg-blue">
-      {/* Full-bleed background image — existing asset, unchanged */}
+      {/* Full-bleed background image â€” existing asset, unchanged */}
       <img
         src={hero.image}
         alt=""
@@ -131,21 +133,24 @@ const HeroSection = () => {
           }}
           className="relative mx-auto w-full max-w-md lg:ml-auto"
         >
-          <div className="rounded-2xl border border-white/40 bg-white p-5 shadow-[0_30px_70px_rgba(7,28,51,0.28)] sm:p-7">
+          <div
+            {...pauseHandlers}
+            className="rounded-2xl border border-white/40 bg-white p-5 shadow-[0_30px_70px_rgba(7,28,51,0.28)] sm:p-7"
+          >
             <span className="eyebrow">{heroContent.finder.eyebrow}</span>
             <h2 className="mt-2 font-heading text-2xl font-extrabold tracking-tight text-navy">
               {heroContent.finder.title}
             </h2>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              {heroContent.finder.options.map((option) => {
-                const isActive = option.id === activeId;
+              {heroContent.finder.options.map((option, index) => {
+                const isActive = index === activeIndex;
                 return (
                   <button
                     key={option.id}
                     type="button"
                     aria-pressed={isActive}
-                    onClick={() => setActiveId(option.id)}
+                    onClick={() => select(index)}
                     className={`rounded-full border px-3.5 py-2 text-xs font-semibold transition-all duration-200 focus-ring sm:text-sm ${
                       isActive
                         ? 'border-orange bg-orange text-navy shadow-sm'

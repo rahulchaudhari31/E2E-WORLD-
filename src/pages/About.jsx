@@ -13,14 +13,14 @@ const About = () => {
   return (
     <>
       <Seo
-        title={`About ${company.name}`}
-        description="Learn about e2e World Group, founded in Birmingham in 2007, and the four specialist companies delivering recruitment, HR, IT, immigration and digital solutions."
+        title={company.name}
+        description="e2e World Group was founded in Birmingham in 2007 and brings together four specialist companies delivering recruitment, HR, IT, immigration and digital solutions."
         path="/about"
       />
       <main>
         <PageHero
           eyebrow="Our Story"
-          title={`About ${company.name}`}
+          title={company.name}
           subtitle="Founded in 2007 and headquartered in Birmingham, we bring four specialist companies together to support UK businesses and skilled professionals at every step."
           image={images.heroDark}
           breadcrumb={[

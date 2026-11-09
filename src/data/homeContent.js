@@ -224,7 +224,7 @@ export const journeySection = {
 };
 
 export const aboutSection = {
-  eyebrow: 'ABOUT E2E WORLD GROUP',
+  eyebrow: 'E2E WORLD GROUP',
   heading: {
     before: 'Built in Birmingham. ',
     accent: 'Serving the world.',

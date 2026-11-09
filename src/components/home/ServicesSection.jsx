@@ -1,15 +1,19 @@
 /**
- * ServicesSection — Company tabs with an animated feature panel.
+ * ServicesSection â€” Company tabs with an animated feature panel.
  */
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, Check } from 'lucide-react';
 
 import { Container, Reveal } from '../common';
+import useAutoRotate from '../../hooks/useAutoRotate';
 import { servicesSection } from '../../data/homeContent';
 
 const ServicesSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { activeIndex, select, pauseHandlers } = useAutoRotate(
+    servicesSection.tabs.length,
+    { interval: 1500 },
+  );
   const tabRefs = useRef([]);
   const { eyebrow, heading, tabs } = servicesSection;
   const activeTab = tabs[activeIndex];
@@ -30,7 +34,7 @@ const ServicesSection = () => {
     }
 
     event.preventDefault();
-    setActiveIndex(nextIndex);
+    select(nextIndex);
     tabRefs.current[nextIndex]?.focus();
   };
 
@@ -46,12 +50,13 @@ const ServicesSection = () => {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.05}>
-          <div
-            role="tablist"
-            aria-label="Company services"
-            className="mx-auto mt-9 flex max-w-4xl flex-wrap items-center justify-center gap-2"
-          >
+        <div {...pauseHandlers}>
+          <Reveal delay={0.05}>
+            <div
+              role="tablist"
+              aria-label="Company services"
+              className="mx-auto mt-9 flex max-w-4xl flex-wrap items-center justify-center gap-2"
+            >
             {tabs.map((tab, index) => {
               const isActive = index === activeIndex;
               return (
@@ -66,7 +71,7 @@ const ServicesSection = () => {
                   aria-selected={isActive}
                   aria-controls={`services-panel-${tab.id}`}
                   tabIndex={isActive ? 0 : -1}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => select(index)}
                   onKeyDown={(event) => handleKeyDown(event, index)}
                   className={`rounded-full px-5 py-2.5 font-heading text-sm font-bold transition-all duration-200 focus-ring ${
                     isActive
@@ -129,6 +134,7 @@ const ServicesSection = () => {
             </div>
           </motion.div>
         </AnimatePresence>
+        </div>
       </Container>
     </section>
   );
