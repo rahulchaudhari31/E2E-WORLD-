@@ -5,7 +5,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
+import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 
 import { Button, Container } from '../common';
 import Logo from './Logo';
@@ -194,11 +194,9 @@ const Navbar = () => {
                         >
                           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_24px_60px_rgba(11,42,74,0.16)]">
                             {companies.map((company) => (
-                              <a
+                              <Link
                                 key={company.name}
-                                href={company.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                to={`/ventures/${company.slug}`}
                                 onClick={() => setDropdownOpen(false)}
                                 className="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-sky focus-ring"
                               >
@@ -211,7 +209,7 @@ const Navbar = () => {
                                 <span className="min-w-0 flex-1">
                                   <span className="flex items-center gap-1.5 font-heading text-sm font-bold text-navy">
                                     {company.name}
-                                    <ArrowUpRight
+                                    <ArrowRight
                                       size={14}
                                       aria-hidden="true"
                                       className="opacity-0 transition-opacity group-hover/item:opacity-100"
@@ -221,7 +219,7 @@ const Navbar = () => {
                                     {company.tags.join(' · ')}
                                   </span>
                                 </span>
-                              </a>
+                              </Link>
                             ))}
 
                             <Link
@@ -374,23 +372,21 @@ const Navbar = () => {
                             >
                               <div className="space-y-1 pb-2 pl-3 pr-2 pt-1">
                                 {companies.map((company) => (
-                                  <a
+                                  <Link
                                     key={company.name}
-                                    href={company.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    to={`/ventures/${company.slug}`}
                                     onClick={() => setMobileOpen(false)}
                                     className="flex items-center justify-between gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-sky focus-ring"
                                   >
                                     <span className="font-heading text-sm font-bold text-navy">
                                       {company.name}
                                     </span>
-                                    <ArrowUpRight
+                                    <ArrowRight
                                       size={15}
                                       aria-hidden="true"
                                       className="text-blue"
                                     />
-                                  </a>
+                                  </Link>
                                 ))}
                                 <Link
                                   to="/ventures"
