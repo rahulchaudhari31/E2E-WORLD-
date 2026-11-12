@@ -32,7 +32,17 @@ const GlobalPresenceSection = () => {
             {regions.map((region) => (
               <li key={region.name}>
                 <span className="inline-flex cursor-default items-center rounded-full border border-white/25 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 transition-all duration-300 hover:border-orange hover:bg-orange/15 hover:text-white">
-                  {region.name}
+                  {region.name.split(' ').map((word, wordIndex) => (
+                    <span
+                      key={`${word}-${wordIndex}`}
+                      className={wordIndex > 0 ? 'ml-1' : undefined}
+                    >
+                      <span className="font-heading text-lg font-extrabold leading-none text-orange">
+                        {word.charAt(0)}
+                      </span>
+                      {word.slice(1)}
+                    </span>
+                  ))}
                   {region.suffix && (
                     <span className="ml-1.5 text-orange">{region.suffix}</span>
                   )}

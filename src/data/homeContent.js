@@ -22,7 +22,7 @@ export const heroContent = {
     options: [
       {
         id: 'hire',
-        label: 'Hire talent',
+        label: 'Hire Talent',
         company: 'e2e HRC',
         description:
           'End-to-end recruitment and HR services for multiple sectors across the UK.',
@@ -30,7 +30,7 @@ export const heroContent = {
       },
       {
         id: 'it',
-        label: 'IT & specialist hiring',
+        label: 'IT Hiring & Consultancy',
         company: 'e2e Infosys',
         description:
           'Specialist technical hiring, IT consulting and workforce management solutions.',
@@ -38,7 +38,7 @@ export const heroContent = {
       },
       {
         id: 'visas',
-        label: 'Visas & sponsorship',
+        label: 'Visas & Immigration Advice',
         company: 'elite PiC',
         description:
           'IAA (formerly OISC) approved sponsorship licence, visa and compliance support.',
@@ -46,7 +46,7 @@ export const heroContent = {
       },
       {
         id: 'web',
-        label: 'Website & marketing',
+        label: 'Digital & Tech Solutions',
         company: 'e2e Cyber Solutions',
         description:
           'Digital marketing, web development and cybersecurity that grow your brand.',
@@ -62,12 +62,13 @@ export const marqueeItems = [
   'Insurance',
   'Retail',
   'Engineering & Manufacturing',
-  'Automotive',
-  'Telecom',
+  'Hospitality',
+  'Healthcare',
   'Aerospace',
 ];
 
 export const companiesSection = {
+  tagline: 'One Stop Solution - Manpower to Marketing',
   eyebrow: 'OUR COMPANIES',
   heading: {
     before: 'One group. ',
@@ -266,11 +267,6 @@ export const faqSection = {
       question: 'Which company should I contact first?',
       answer:
         'Start with the team closest to your need: e2e HRC for recruitment and HR, e2e Infosys for IT and technical hiring, elite PiC for visas and sponsorship, or e2e Cyber Solutions for web and marketing. If you are unsure, contact us and we will route you to the right team.',
-    },
-    {
-      question: 'Do you work with businesses outside the UK?',
-      answer:
-        'Yes. The group supports clients across the United Kingdom, the Middle East, Europe, South East Asia and South Asia.',
     },
     {
       question: 'Can the companies work together on one project?',

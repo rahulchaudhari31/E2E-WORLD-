@@ -3,7 +3,7 @@
  */
 import { useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUpRight, Check } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 import { Container, Reveal } from '../common';
 import useAutoRotate from '../../hooks/useAutoRotate';
@@ -118,15 +118,16 @@ const ServicesSection = () => {
                 </a>
               </div>
 
-              <ul className="grid gap-3 sm:grid-cols-2">
+              <ul className="grid gap-2 sm:grid-cols-2">
                 {activeTab.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-2.5 rounded-xl border border-slate-200 bg-white p-4 text-sm font-medium text-navy transition-colors hover:border-blue/40 hover:bg-sky/60"
+                    className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-navy transition-colors hover:border-blue/40 hover:bg-sky/60 sm:text-sm"
                   >
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-lime text-navy">
-                      <Check size={13} strokeWidth={3} aria-hidden="true" />
-                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange"
+                    />
                     {feature}
                   </li>
                 ))}

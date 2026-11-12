@@ -2,16 +2,23 @@
  * AboutPreview — Group story with animated stat tiles.
  */
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Building2, Calendar, Globe2, ShieldCheck } from 'lucide-react';
 
 import { AnimatedCounter, Container, Reveal } from '../common';
 import { aboutSection } from '../../data/homeContent';
 
 const toneClasses = {
-  orange: 'bg-orange text-navy',
-  blue: 'bg-blue text-white',
-  lime: 'bg-lime text-navy',
-  navy: 'bg-navy text-white',
+  orange: 'bg-orange/15 text-orange-dark',
+  blue: 'bg-blue/10 text-blue',
+  lime: 'bg-lime/40 text-lime-dark',
+  navy: 'bg-navy/10 text-navy',
+};
+
+const toneIcons = {
+  orange: Calendar,
+  blue: Building2,
+  lime: Globe2,
+  navy: ShieldCheck,
 };
 
 const AboutPreview = () => {
@@ -44,26 +51,36 @@ const AboutPreview = () => {
           </Reveal>
 
           <Reveal preset="fadeLeft" delay={0.1}>
-            <div className="grid grid-cols-2 gap-4 sm:gap-5">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className={`flex min-h-36 flex-col justify-between rounded-2xl p-5 shadow-[var(--shadow-card)] sm:min-h-44 sm:p-6 ${
-                    toneClasses[stat.tone] || toneClasses.blue
-                  }`}
-                >
-                  <span className="font-heading text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-4xl">
-                    {typeof stat.value === 'number' ? (
-                      <AnimatedCounter value={stat.value} />
-                    ) : (
-                      stat.value
-                    )}
-                  </span>
-                  <span className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] opacity-80 sm:text-sm">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {stats.map((stat) => {
+                const Icon = toneIcons[stat.tone] || Building2;
+                return (
+                  <div
+                    key={stat.label}
+                    className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-[var(--shadow-card)]"
+                  >
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
+                        toneClasses[stat.tone] || toneClasses.blue
+                      }`}
+                    >
+                      <Icon size={16} aria-hidden="true" />
+                    </span>
+                    <div className="min-w-0">
+                      <span className="block font-heading text-xl font-extrabold tracking-tight text-navy sm:text-2xl">
+                        {typeof stat.value === 'number' ? (
+                          <AnimatedCounter value={stat.value} />
+                        ) : (
+                          stat.value
+                        )}
+                      </span>
+                      <span className="mt-0.5 block text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-muted sm:text-xs">
+                        {stat.label}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </Reveal>
         </div>

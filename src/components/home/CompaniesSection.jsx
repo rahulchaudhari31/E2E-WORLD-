@@ -49,7 +49,7 @@ const CompanyCard = ({ company }) => (
 );
 
 const CompaniesSection = () => {
-  const { eyebrow, heading, subtext, companies } = companiesSection;
+  const { tagline, eyebrow, heading, subtext, companies } = companiesSection;
   const trackRef = useRef(null);
   const setRef = useRef(null);
   const offsetRef = useRef(0);
@@ -109,6 +109,11 @@ const CompaniesSection = () => {
     >
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
+          {tagline && (
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-orange">
+              {tagline}
+            </p>
+          )}
           <span className="eyebrow">{eyebrow}</span>
           <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
             {heading.before}
