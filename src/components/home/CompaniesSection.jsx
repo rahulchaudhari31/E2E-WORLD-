@@ -113,7 +113,7 @@ const CompaniesSection = () => {
           src={images.groupTeamBackground}
           alt=""
           loading="lazy"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain object-center"
         />
         <div className="absolute inset-0 bg-white/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/45 to-white/10" />
