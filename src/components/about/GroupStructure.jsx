@@ -49,7 +49,7 @@ const VentureNode = ({ venture }) => {
     >
       <Link
         to={`/ventures/${venture.slug}`}
-        className="group flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-5 text-left shadow-[var(--shadow-card)] transition-shadow duration-300 hover:shadow-[var(--shadow-card-hover)] focus-ring"
+        className="group flex h-full flex-col rounded-2xl border border-white/70 bg-white/70 p-5 text-left shadow-[var(--shadow-card)] backdrop-blur-md transition-colors duration-300 hover:bg-white/90 hover:shadow-[var(--shadow-card-hover)] focus-ring"
         aria-label={`Explore ${venture.name}`}
       >
         <span
@@ -93,8 +93,8 @@ const GroupStructure = () => {
           loading="lazy"
           className="h-full w-full object-contain object-center"
         />
-        <div className="absolute inset-0 bg-white/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/45 to-white/10" />
+        <div className="absolute inset-0 bg-white/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/30 to-transparent" />
       </div>
 
       <Container className="relative z-10">
