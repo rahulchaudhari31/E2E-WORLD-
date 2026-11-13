@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Building2,
@@ -8,164 +7,229 @@ import {
   Shield,
   Users,
 } from 'lucide-react';
-import { Container, Reveal, SectionHeading } from '../common';
-import { company } from '../../data/site';
-import ventures from '../../data/ventures';
-import images from '../../data/images';
+import './our-group.css';
 
-const iconMap = { Users, Monitor, Globe, Shield };
+const companies = [
+  {
+    name: 'e2e Infosys',
+    tagline: 'Navigating the new digital landscape.',
+    slug: 'e2e-infosys',
+    color: '#14B8A6',
+    Icon: Monitor,
+    position: 'tl',
+  },
+  {
+    name: 'e2e HRC',
+    tagline: 'Connecting talent with opportunity.',
+    slug: 'e2e-hrc',
+    color: '#1A75BB',
+    Icon: Users,
+    position: 'tr',
+  },
+  {
+    name: 'e2e Cyber Solutions',
+    tagline: 'Disruptive ideas. Strategic execution.',
+    slug: 'e2e-cyber-solutions',
+    color: '#EF4444',
+    Icon: Shield,
+    position: 'bl',
+  },
+  {
+    name: 'elite PiC',
+    tagline: 'Expert guidance through UK immigration.',
+    slug: 'elite-pic',
+    color: '#F7941D',
+    Icon: Globe,
+    position: 'br',
+  },
+];
 
-const GroupNode = () => {
+const GroupCard = ({ company, className = '' }) => {
+  const { name, tagline, slug, color, Icon } = company;
+
   return (
-    <div className="relative mx-auto w-full max-w-xs">
-      <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-teal px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-navy">
-        Group
+    <article className={`our-group-card ${className}`.trim()}>
+      <span
+        className="our-group-card-icon"
+        style={{ backgroundColor: `${color}1A`, color }}
+        aria-hidden="true"
+      >
+        <Icon size={30} strokeWidth={1.8} />
       </span>
-      <div className="relative overflow-hidden rounded-2xl bg-navy p-6 text-center text-white shadow-xl ring-1 ring-white/15">
-        <div
-          className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-teal/20 blur-2xl"
+      <h3 className="our-group-card-title">{name}</h3>
+      <p className="our-group-card-desc">{tagline}</p>
+      <span className="our-group-card-cta" style={{ color }}>
+        Explore company
+        <ArrowRight
+          className="our-group-card-arrow"
+          size={15}
           aria-hidden="true"
         />
-        <div className="relative">
-          <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-teal-light ring-1 ring-white/15">
-            <Building2 size={24} aria-hidden="true" />
-          </span>
-          <p className="mt-3 text-lg font-bold font-heading">{company.name}</p>
-          <p className="mt-1 text-sm text-slate-300">{company.tagline}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const VentureNode = ({ venture }) => {
-  const Icon = iconMap[venture.icon] || Globe;
-
-  return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-      className="h-full"
-    >
+      </span>
       <Link
-        to={`/ventures/${venture.slug}`}
-        className="group flex h-full flex-col rounded-2xl border border-white/70 bg-white/70 p-5 text-left shadow-[var(--shadow-card)] backdrop-blur-md transition-colors duration-300 hover:bg-white/90 hover:shadow-[var(--shadow-card-hover)] focus-ring"
-        aria-label={`Explore ${venture.name}`}
-      >
-        <span
-          className="flex h-12 w-12 items-center justify-center rounded-xl"
-          style={{
-            backgroundColor: `${venture.color}15`,
-            color: venture.color,
-          }}
-        >
-          <Icon size={22} aria-hidden="true" />
-        </span>
-        <h3 className="mt-4 text-lg font-bold font-heading text-navy">
-          {venture.name}
-        </h3>
-        <p className="mt-1 text-sm leading-relaxed text-slate-500">
-          {venture.tagline}
-        </p>
-        <span
-          className="mt-auto inline-flex items-center gap-1 pt-4 text-xs font-semibold"
-          style={{ color: venture.color }}
-        >
-          Explore company
-          <ArrowRight
-            size={14}
-            className="transition-transform duration-300 group-hover:translate-x-1"
-            aria-hidden="true"
-          />
-        </span>
-      </Link>
-    </motion.div>
+        to={`/ventures/${slug}`}
+        className="our-group-card-stretched"
+        aria-label={`Explore ${name}`}
+      />
+    </article>
   );
 };
+
+const CenterCard = () => (
+  <div className="our-group-center-card">
+    <span className="our-group-center-badge">GROUP</span>
+    <span className="our-group-center-icon" aria-hidden="true">
+      <Building2 size={26} strokeWidth={1.8} />
+    </span>
+    <h3 className="our-group-center-title">e2e World Group</h3>
+    <p className="our-group-center-tagline">
+      Talent. Technology. Compliance. Growth.
+    </p>
+  </div>
+);
+
+const DesktopDiagram = () => (
+  <svg
+    className="our-group-stage-art"
+    viewBox="0 0 1280 720"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <image
+      href="/our-group-world-map.svg"
+      x="140"
+      y="110"
+      width="1000"
+      height="500"
+      preserveAspectRatio="xMidYMid meet"
+      opacity="0.5"
+    />
+    <circle
+      cx="640"
+      cy="360"
+      r="210"
+      fill="none"
+      stroke="#F7941D"
+      strokeWidth="2"
+      vectorEffect="non-scaling-stroke"
+    />
+    <g
+      fill="none"
+      stroke="#F7941D"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path
+        d="M491.5 211.5 L384 129.6 L18 129.6"
+        vectorEffect="non-scaling-stroke"
+      />
+      <path
+        d="M788.5 211.5 L896 129.6 L1262 129.6"
+        vectorEffect="non-scaling-stroke"
+      />
+      <path
+        d="M491.5 508.5 L384 590.4 L18 590.4"
+        vectorEffect="non-scaling-stroke"
+      />
+      <path
+        d="M788.5 508.5 L896 590.4 L1262 590.4"
+        vectorEffect="non-scaling-stroke"
+      />
+    </g>
+    <g fill="#F7941D">
+      <polygon points="4,129.6 18,122.6 18,136.6" />
+      <polygon points="1276,129.6 1262,122.6 1262,136.6" />
+      <polygon points="4,590.4 18,583.4 18,597.4" />
+      <polygon points="1276,590.4 1262,583.4 1262,597.4" />
+    </g>
+  </svg>
+);
+
+const CompactDiagram = () => (
+  <svg
+    className="our-group-compact-art"
+    viewBox="0 0 520 520"
+    preserveAspectRatio="xMidYMid meet"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <image
+      href="/our-group-world-map.svg"
+      x="20"
+      y="140"
+      width="480"
+      height="240"
+      preserveAspectRatio="xMidYMid meet"
+    />
+    <circle
+      className="our-group-compact-circle"
+      cx="260"
+      cy="260"
+      r="205"
+      fill="none"
+      stroke="#F7941D"
+      strokeWidth="2"
+      vectorEffect="non-scaling-stroke"
+    />
+  </svg>
+);
 
 const GroupStructure = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
-      <div aria-hidden="true" className="absolute inset-0">
-        <img
-          src={images.groupTeamBackground}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-contain object-center"
-        />
-        <div className="absolute inset-0 bg-white/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/30 to-transparent" />
-      </div>
+    <section
+      aria-labelledby="our-group-heading"
+      className="our-group-section"
+    >
+      <div className="our-group-container">
+        <div className="our-group-header">
+          <span className="our-group-eyebrow">OUR GROUP</span>
+          <h2 id="our-group-heading" className="our-group-heading">
+            One group. Four specialist companies.
+          </h2>
+          <p className="our-group-subtext">
+            A connected family of businesses working together to support every
+            stage of your journey — from hiring to growth.
+          </p>
+        </div>
 
-      <Container className="relative z-10">
-        <SectionHeading
-          eyebrow="Our Group"
-          title="One group. Four specialist companies."
-          subtitle="A connected family of businesses working together to support every stage of your journey — from hiring to growth."
-        />
+        {/* Desktop: world-map diagram with cards in the four corners */}
+        <div className="our-group-desktop">
+          <div className="our-group-stage">
+            <DesktopDiagram />
 
-        <Reveal preset="fadeUp">
-          <div className="relative">
-            <GroupNode />
-
-            {/* Desktop branching connectors */}
-            <div className="relative hidden lg:block">
-              <div
-                className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-slate-300"
-                aria-hidden="true"
-              />
-              <div
-                className="absolute top-8 h-px bg-slate-300"
-                style={{
-                  left: 'calc(12.5% - 7.5px)',
-                  right: 'calc(12.5% - 7.5px)',
-                }}
-                aria-hidden="true"
-              />
-              <div className="grid grid-cols-4 gap-5">
-                {ventures.map((venture) => (
-                  <div key={venture.slug} className="relative pt-16">
-                    <span
-                      className="absolute left-1/2 top-8 h-8 w-px -translate-x-1/2 bg-slate-300"
-                      aria-hidden="true"
-                    />
-                    <VentureNode venture={venture} />
-                  </div>
-                ))}
-              </div>
+            <div className="our-group-center">
+              <CenterCard />
             </div>
 
-            {/* Mobile stacked connectors */}
-            <div className="relative lg:hidden">
-              <div className="relative h-6">
-                <span
-                  className="absolute left-1/2 top-0 h-6 w-px -translate-x-1/2 bg-slate-300"
-                  aria-hidden="true"
-                />
-                <span
-                  className="absolute left-5 right-1/2 top-6 h-px bg-slate-300"
-                  aria-hidden="true"
-                />
+            {companies.map((company) => (
+              <div
+                key={company.slug}
+                className={`our-group-slot our-group-slot--${company.position}`}
+              >
+                <GroupCard company={company} />
               </div>
-              <div className="relative space-y-4 pt-6">
-                <span
-                  className="absolute bottom-8 left-5 top-0 w-px bg-slate-200"
-                  aria-hidden="true"
-                />
-                {ventures.map((venture) => (
-                  <div key={venture.slug} className="relative pl-10">
-                    <span
-                      className="absolute left-5 top-8 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent ring-4 ring-white"
-                      aria-hidden="true"
-                    />
-                    <VentureNode venture={venture} />
-                  </div>
-                ))}
-              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tablet / mobile: centre card first, then the four cards */}
+        <div className="our-group-compact">
+          <div className="our-group-compact-hero">
+            <CompactDiagram />
+            <div className="our-group-compact-center">
+              <CenterCard />
             </div>
           </div>
-        </Reveal>
-      </Container>
+
+          <div className="our-group-compact-grid">
+            {companies.map((company) => (
+              <GroupCard key={company.slug} company={company} />
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

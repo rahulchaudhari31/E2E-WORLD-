@@ -1,0 +1,365 @@
+/* ============================================================
+   Our Group — section-scoped styles (About page only)
+   All selectors are prefixed with .our-group- to avoid
+   touching any global or shared styles.
+   ============================================================ */
+
+.our-group-section {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+@media (min-width: 1024px) {
+  .our-group-section {
+    padding: 96px 0;
+  }
+}
+
+.our-group-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 639px) {
+  .our-group-container {
+    padding: 0 18px;
+  }
+}
+
+/* ---------- Header ---------- */
+.our-group-header {
+  max-width: 820px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .our-group-header {
+    margin-bottom: 40px;
+  }
+}
+
+.our-group-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0a6eb4;
+}
+
+.our-group-heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 5.2vw, 40px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #0b2a4a;
+}
+
+@media (min-width: 1024px) {
+  .our-group-heading {
+    font-size: clamp(48px, 4vw, 56px);
+  }
+}
+
+.our-group-subtext {
+  max-width: 800px;
+  margin: 18px auto 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #5b6b7c;
+}
+
+@media (min-width: 1024px) {
+  .our-group-subtext {
+    font-size: 19px;
+  }
+}
+
+/* ---------- Company cards ---------- */
+.our-group-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(9, 42, 73, 0.08);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+.our-group-card:hover,
+.our-group-card:focus-within {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 45px rgba(9, 42, 73, 0.16);
+}
+
+.our-group-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+}
+
+.our-group-card-title {
+  margin: 16px 0 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #0b2a4a;
+}
+
+.our-group-card-desc {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5b6b7c;
+}
+
+.our-group-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.our-group-card-arrow {
+  transition: transform 200ms ease;
+}
+
+.our-group-card:hover .our-group-card-arrow,
+.our-group-card:focus-within .our-group-card-arrow {
+  transform: translateX(4px);
+}
+
+/* Stretched link: makes the whole card clickable. */
+.our-group-card-stretched {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 18px;
+}
+
+.our-group-card-stretched:focus-visible {
+  outline: 2px solid #f7941d;
+  outline-offset: 3px;
+}
+
+/* ---------- Centre card ---------- */
+.our-group-center-card {
+  position: relative;
+  width: 100%;
+  padding: 30px 26px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0b2a4a 0%, #071c33 100%);
+  box-shadow: 0 24px 50px rgba(9, 42, 73, 0.28);
+  text-align: center;
+  color: #ffffff;
+}
+
+.our-group-center-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: #5b9a2f;
+  box-shadow: 0 4px 12px rgba(91, 154, 47, 0.35);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.our-group-center-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #b8db8b;
+}
+
+.our-group-center-title {
+  margin: 14px 0 0;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.our-group-center-tagline {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+/* ---------- Desktop diagram (>=1024px) ---------- */
+.our-group-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .our-group-desktop {
+    display: block;
+  }
+}
+
+.our-group-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.our-group-stage-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.our-group-slot {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 26%;
+  max-width: 340px;
+}
+
+.our-group-slot--tl {
+  top: 0;
+  left: 4%;
+  height: 36%;
+}
+
+.our-group-slot--tr {
+  top: 0;
+  right: 4%;
+  height: 36%;
+}
+
+.our-group-slot--bl {
+  bottom: 0;
+  left: 4%;
+  height: 36%;
+}
+
+.our-group-slot--br {
+  bottom: 0;
+  right: 4%;
+  height: 36%;
+}
+
+.our-group-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 30%;
+  max-width: 400px;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- Tablet / mobile layout ---------- */
+.our-group-compact {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .our-group-compact {
+    display: none;
+  }
+}
+
+.our-group-compact-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  aspect-ratio: 1 / 1;
+}
+
+.our-group-compact-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.our-group-compact-center {
+  position: relative;
+  z-index: 2;
+  width: min(78%, 360px);
+}
+
+.our-group-compact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .our-group-compact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+.our-group-compact-art image {
+  opacity: 0.35;
+}
+
+@media (max-width: 639px) {
+  .our-group-compact-art image {
+    opacity: 0.15;
+  }
+
+  .our-group-compact-circle {
+    display: none;
+  }
+
+  .our-group-compact-hero {
+    margin-bottom: 22px;
+  }
+}
