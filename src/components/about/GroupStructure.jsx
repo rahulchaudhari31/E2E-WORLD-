@@ -21,13 +21,13 @@ const GroupNode = () => {
       <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-teal px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-navy">
         Group
       </span>
-      <div className="relative overflow-hidden rounded-2xl bg-navy p-6 text-center text-white shadow-xl ring-1 ring-navy-dark/15">
+      <div className="relative overflow-hidden rounded-2xl bg-navy p-6 text-center text-white shadow-xl ring-1 ring-white/15">
         <div
           className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-teal/20 blur-2xl"
           aria-hidden="true"
         />
         <div className="relative">
-          <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-teal-light ring-1 ring-navy-dark/15">
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-teal-light ring-1 ring-white/15">
             <Building2 size={24} aria-hidden="true" />
           </span>
           <p className="mt-3 text-lg font-bold font-heading">{company.name}</p>
@@ -85,7 +85,7 @@ const VentureNode = ({ venture }) => {
 
 const GroupStructure = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-navy-dark py-16 sm:py-20 lg:py-24">
+    <section className="relative isolate overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
       <div aria-hidden="true" className="absolute inset-0">
         <img
           src={images.groupTeamBackground}
@@ -93,8 +93,8 @@ const GroupStructure = () => {
           loading="lazy"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-blue-dark/80" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/60 via-navy-dark/70 to-navy-dark/90" />
+        <div className="absolute inset-0 bg-white/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/45 to-white/10" />
       </div>
 
       <Container className="relative z-10">
@@ -102,7 +102,6 @@ const GroupStructure = () => {
           eyebrow="Our Group"
           title="One group. Four specialist companies."
           subtitle="A connected family of businesses working together to support every stage of your journey — from hiring to growth."
-          light
         />
 
         <Reveal preset="fadeUp">
@@ -112,11 +111,11 @@ const GroupStructure = () => {
             {/* Desktop branching connectors */}
             <div className="relative hidden lg:block">
               <div
-                className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-white/40"
+                className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-slate-300"
                 aria-hidden="true"
               />
               <div
-                className="absolute top-8 h-px bg-white/40"
+                className="absolute top-8 h-px bg-slate-300"
                 style={{
                   left: 'calc(12.5% - 7.5px)',
                   right: 'calc(12.5% - 7.5px)',
@@ -127,7 +126,7 @@ const GroupStructure = () => {
                 {ventures.map((venture) => (
                   <div key={venture.slug} className="relative pt-16">
                     <span
-                      className="absolute left-1/2 top-8 h-8 w-px -translate-x-1/2 bg-white/40"
+                      className="absolute left-1/2 top-8 h-8 w-px -translate-x-1/2 bg-slate-300"
                       aria-hidden="true"
                     />
                     <VentureNode venture={venture} />
@@ -140,23 +139,23 @@ const GroupStructure = () => {
             <div className="relative lg:hidden">
               <div className="relative h-6">
                 <span
-                  className="absolute left-1/2 top-0 h-6 w-px -translate-x-1/2 bg-white/40"
+                  className="absolute left-1/2 top-0 h-6 w-px -translate-x-1/2 bg-slate-300"
                   aria-hidden="true"
                 />
                 <span
-                  className="absolute left-5 right-1/2 top-6 h-px bg-white/40"
+                  className="absolute left-5 right-1/2 top-6 h-px bg-slate-300"
                   aria-hidden="true"
                 />
               </div>
               <div className="relative space-y-4 pt-6">
                 <span
-                  className="absolute bottom-8 left-5 top-0 w-px bg-white/20"
+                  className="absolute bottom-8 left-5 top-0 w-px bg-slate-200"
                   aria-hidden="true"
                 />
                 {ventures.map((venture) => (
                   <div key={venture.slug} className="relative pl-10">
                     <span
-                      className="absolute left-5 top-8 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent ring-4 ring-navy-dark"
+                      className="absolute left-5 top-8 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-accent ring-4 ring-white"
                       aria-hidden="true"
                     />
                     <VentureNode venture={venture} />
