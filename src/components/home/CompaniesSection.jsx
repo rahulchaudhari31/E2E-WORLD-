@@ -8,6 +8,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 import { Container, Reveal } from '../common';
 import { companiesSection } from '../../data/homeContent';
+import images from '../../data/images';
 
 const SPEED = 90; // pixels per second
 
@@ -105,22 +106,33 @@ const CompaniesSection = () => {
   return (
     <section
       id="companies"
-      className="scroll-mt-[var(--nav-height)] bg-white py-20 md:py-28"
+      className="relative isolate scroll-mt-[var(--nav-height)] overflow-hidden bg-navy-dark py-20 md:py-28"
     >
-      <Container>
+      <div aria-hidden="true" className="absolute inset-0">
+        <img
+          src={images.groupTeamBackground}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-blue-dark/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/60 via-navy-dark/70 to-navy-dark/90" />
+      </div>
+
+      <Container className="relative z-10">
         <Reveal className="mx-auto max-w-2xl text-center">
           {tagline && (
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-orange">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-orange-light">
               {tagline}
             </p>
           )}
-          <span className="eyebrow">{eyebrow}</span>
-          <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-5xl">
+          <span className="eyebrow !text-blue-light">{eyebrow}</span>
+          <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {heading.before}
-            <span className="text-blue">{heading.accent}</span>
+            <span className="text-orange">{heading.accent}</span>
             {heading.after}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/75">
             {subtext}
           </p>
         </Reveal>
@@ -159,11 +171,11 @@ const CompaniesSection = () => {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent"
+          className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-navy-dark to-transparent"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent"
+          className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-navy-dark to-transparent"
         />
       </div>
     </section>

@@ -14,6 +14,7 @@ const images = {
   teamMeeting: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
   handshake: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80',
   teamGroup: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+  groupTeamBackground: '/e2e-world-team-background.jpg',
 
   /* ---- Venture Cards ---- */
   recruitment: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
