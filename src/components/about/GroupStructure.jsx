@@ -244,7 +244,7 @@ const GroupStructure = () => {
       className="our-group-section"
     >
       <div className="our-group-map-bg" aria-hidden="true">
-        <img src="/our-group-world-map.svg" alt="" />
+        <img src="/our-group-world-map.jpg" alt="" />
       </div>
       <div className="our-group-container">
         <div className="our-group-header">

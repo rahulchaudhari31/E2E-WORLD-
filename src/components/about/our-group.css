@@ -12,13 +12,14 @@
   padding: 80px 0;
 }
 
-/* World map sits behind the whole section as a soft background. */
+/* World map fills the whole group section as the background. */
 .our-group-map-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  opacity: 0.3;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
@@ -32,16 +33,7 @@
 
 @media (max-width: 1023px) {
   .our-group-map-bg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.18;
-  }
-
-  .our-group-map-bg img {
-    width: 200%;
-    height: auto;
-    max-width: none;
+    opacity: 0.8;
   }
 }
 
