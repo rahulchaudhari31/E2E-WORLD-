@@ -6,9 +6,43 @@
 
 .our-group-section {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   background: #ffffff;
   padding: 80px 0;
+}
+
+/* World map sits behind the whole section as a soft background. */
+.our-group-map-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.our-group-map-bg img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1023px) {
+  .our-group-map-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.18;
+  }
+
+  .our-group-map-bg img {
+    width: 200%;
+    height: auto;
+    max-width: none;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -18,6 +52,8 @@
 }
 
 .our-group-container {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -300,14 +336,6 @@
   pointer-events: none;
 }
 
-.our-group-stage-art image {
-  transition: opacity 300ms ease;
-}
-
-.our-group-stage:hover .our-group-stage-art image {
-  opacity: 0.62;
-}
-
 .our-group-slot {
   position: absolute;
   z-index: 2;
@@ -406,15 +434,7 @@
   }
 }
 
-.our-group-compact-art image {
-  opacity: 0.35;
-}
-
 @media (max-width: 639px) {
-  .our-group-compact-art image {
-    opacity: 0.15;
-  }
-
   .our-group-compact-circle {
     display: none;
   }
@@ -537,8 +557,7 @@
   .our-group-card-icon,
   .our-group-card-cta,
   .our-group-card-arrow,
-  .our-group-center-card,
-  .our-group-stage-art image {
+  .our-group-center-card {
     transition: none;
   }
 }

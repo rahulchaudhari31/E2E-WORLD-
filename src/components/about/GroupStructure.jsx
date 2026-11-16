@@ -115,15 +115,6 @@ const DesktopDiagram = () => (
     aria-hidden="true"
     focusable="false"
   >
-    <image
-      href="/our-group-world-map.svg"
-      x="140"
-      y="110"
-      width="1000"
-      height="500"
-      preserveAspectRatio="xMidYMid meet"
-      opacity="0.5"
-    />
     <circle
       className="our-group-circle"
       cx="640"
@@ -204,14 +195,6 @@ const CompactDiagram = () => (
     aria-hidden="true"
     focusable="false"
   >
-    <image
-      href="/our-group-world-map.svg"
-      x="20"
-      y="140"
-      width="480"
-      height="240"
-      preserveAspectRatio="xMidYMid meet"
-    />
     <circle
       className="our-group-compact-circle"
       cx="260"
@@ -260,6 +243,9 @@ const GroupStructure = () => {
       aria-labelledby="our-group-heading"
       className="our-group-section"
     >
+      <div className="our-group-map-bg" aria-hidden="true">
+        <img src="/our-group-world-map.svg" alt="" />
+      </div>
       <div className="our-group-container">
         <div className="our-group-header">
           <span className="our-group-eyebrow">OUR GROUP</span>
