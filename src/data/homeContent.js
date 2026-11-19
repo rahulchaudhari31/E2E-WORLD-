@@ -300,7 +300,7 @@ export const contactSection = {
 
 export const footerContent = {
   tagline:
-    'Talent and management solutions for a connected world. Recruitment, immigration, IT and Digital Growth from one group.',
+    'Talent and management solutions for a connected world. Recruitment, immigration, IT and Digital Growth from e2e world group.',
   groupLinks: [
     { label: 'Home', to: '/' },
     { label: 'About Us', to: '/about' },

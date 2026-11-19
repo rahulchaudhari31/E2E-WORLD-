@@ -252,6 +252,7 @@ const GroupStructure = () => {
           <h2 id="our-group-heading" className="our-group-heading">
             One group. Four specialist companies.
           </h2>
+          <p className="our-group-tagline">One Stop Solution - Manpower to Marketing</p>
           <p className="our-group-subtext">
             A connected family of businesses working together to support every
             stage of your journey — from hiring to growth.

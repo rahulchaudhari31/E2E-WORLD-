@@ -97,6 +97,19 @@
   }
 }
 
+.our-group-tagline {
+  display: inline-block;
+  margin: 16px 0 0;
+  padding: 8px 18px;
+  border: 1px solid #cde5f5;
+  border-radius: 999px;
+  background: #f2f9fd;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #0a6eb4;
+}
+
 .our-group-subtext {
   max-width: 800px;
   margin: 18px auto 0;
