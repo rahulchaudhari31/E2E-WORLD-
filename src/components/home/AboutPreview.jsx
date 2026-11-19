@@ -4,8 +4,9 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, Calendar, Globe2, ShieldCheck } from 'lucide-react';
 
-import { AnimatedCounter, Container, Reveal } from '../common';
+import { AnimatedCounter, Container, ImageWithFallback, Reveal } from '../common';
 import { aboutSection } from '../../data/homeContent';
+import images from '../../data/images';
 
 const toneClasses = {
   orange: 'bg-orange/15 text-orange-dark',
@@ -51,36 +52,45 @@ const AboutPreview = () => {
           </Reveal>
 
           <Reveal preset="fadeLeft" delay={0.1}>
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              {stats.map((stat) => {
-                const Icon = toneIcons[stat.tone] || Building2;
-                return (
-                  <div
-                    key={stat.label}
-                    className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-[var(--shadow-card)]"
-                  >
-                    <span
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
-                        toneClasses[stat.tone] || toneClasses.blue
-                      }`}
+            <div>
+              <div className="overflow-hidden rounded-2xl shadow-[var(--shadow-card)]">
+                <ImageWithFallback
+                  src={images.teamGroup}
+                  alt="The e2e World Group team"
+                  className="aspect-[16/9] w-full sm:aspect-[16/10]"
+                />
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-4">
+                {stats.map((stat) => {
+                  const Icon = toneIcons[stat.tone] || Building2;
+                  return (
+                    <div
+                      key={stat.label}
+                      className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-[var(--shadow-card)]"
                     >
-                      <Icon size={16} aria-hidden="true" />
-                    </span>
-                    <div className="min-w-0">
-                      <span className="block font-heading text-xl font-extrabold tracking-tight text-navy sm:text-2xl">
-                        {typeof stat.value === 'number' ? (
-                          <AnimatedCounter value={stat.value} />
-                        ) : (
-                          stat.value
-                        )}
+                      <span
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${
+                          toneClasses[stat.tone] || toneClasses.blue
+                        }`}
+                      >
+                        <Icon size={16} aria-hidden="true" />
                       </span>
-                      <span className="mt-0.5 block text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-muted sm:text-xs">
-                        {stat.label}
-                      </span>
+                      <div className="min-w-0">
+                        <span className="block font-heading text-xl font-extrabold tracking-tight text-navy sm:text-2xl">
+                          {typeof stat.value === 'number' ? (
+                            <AnimatedCounter value={stat.value} />
+                          ) : (
+                            stat.value
+                          )}
+                        </span>
+                        <span className="mt-0.5 block text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-muted sm:text-xs">
+                          {stat.label}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </Reveal>
         </div>

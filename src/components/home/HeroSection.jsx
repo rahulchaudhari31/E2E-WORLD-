@@ -50,7 +50,7 @@ const HeroSection = () => {
       <div
         aria-hidden="true"
         className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(26, 117, 187, 0.88)' }}
+        style={{ backgroundColor: 'rgba(26, 117, 187, 0.78)' }}
       />
 
       {/* Decorative flat circles */}

@@ -5,23 +5,23 @@
 
 const images = {
   /* ---- Hero / Global ---- */
-  hero: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80',
-  heroDark: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80',
+  hero: '/banner-our-company-office.png',
+  heroDark: '/banner-about-us-london.jpg',
   cityscape: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1920&q=80',
 
   /* ---- About ---- */
-  office: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80',
+  office: '/banner-our-company-office.png',
   teamMeeting: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
   handshake: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80',
-  teamGroup: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+  teamGroup: '/banner-our-story.jpg',
   groupTeamBackground: '/e2e-world-team-background.jpg',
   contactHeadset: '/contact-headset.jpg',
 
   /* ---- Venture Cards ---- */
-  recruitment: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
-  itConsulting: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80',
-  immigration: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=800&q=80',
-  cybersecurity: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
+  recruitment: '/banner-e2e-hrc.jpg',
+  itConsulting: '/banner-e2e-infosys.jpg',
+  immigration: '/banner-elite-pic-uk-visa.png',
+  cybersecurity: '/banner-e2e-cyber-solutions.png',
 
   /* ---- Misc ---- */
   laptopWork: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
