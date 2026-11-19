@@ -24,6 +24,7 @@ const PageHero = ({
   subtitle,
   breadcrumb = [],
   image,
+  sideImage,
   themeColor,
   badge,
   className = '',
@@ -77,12 +78,30 @@ const PageHero = ({
         style={{ backgroundColor: `${accent}33` }}
       />
 
+      {sideImage && (
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] lg:block"
+          aria-hidden="true"
+          style={{ clipPath: 'polygon(14% 0, 100% 0, 100% 100%, 0 100%)' }}
+        >
+          <img
+            src={sideImage}
+            alt=""
+            loading="eager"
+            decoding="async"
+            className="h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/40 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy to-transparent" />
+        </div>
+      )}
+
       <Container className="relative z-10 py-20 md:py-28 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl"
+          className={sideImage ? 'max-w-3xl lg:max-w-[52%]' : 'max-w-3xl'}
         >
           {breadcrumb.length > 0 && (
             <nav aria-label="Breadcrumb" className="mb-6">

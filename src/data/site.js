@@ -46,13 +46,13 @@ export const contact = {
   /* Placeholder — client to confirm working hours. */
   hours: {
     days: 'Monday – Friday',
-    time: '9:00 – 17:30',
+    time: '9am – 6pm',
     note: 'Weekend enquiries will be answered on the next business day.',
   },
   mapEmbedUrl:
     'https://www.google.com/maps?q=1204B%20Stratford%20Rd%2C%20Hall%20Green%2C%20Birmingham%20B28%208HN&output=embed',
   social: {
-    linkedin: 'https://www.linkedin.com/company/e2e-world-group/',
+    linkedin: 'https://www.linkedin.com/company/e2e-world-group-uk/',
     /* Placeholder — replace with the official Facebook page URL when available. */
     facebook: 'https://www.facebook.com/',
   },
@@ -120,23 +120,37 @@ export const globalRegions = [
 export const timeline = [
   {
     year: '2007',
-    title: 'e2e World Group founded',
+    title: 'Where it all began',
     description:
-      'Established with a vision to provide comprehensive talent and management solutions to local businesses in the UK.',
+      'Founded with a vision of connecting UK businesses with international skilled professionals, backed by end-to-end immigration support.',
     placeholder: false,
   },
   {
-    year: 'Growth',
-    title: 'Expansion beyond the UK and the Middle East',
+    year: '2010',
+    title: 'Expanding beyond borders',
     description:
-      'The group expanded into Europe and South East Asia, helping to address UK talent shortages by bringing skilled professionals from around the world.',
+      'Rapid growth in international recruitment led to our expansion into the UAE and South Asia, establishing a wider global presence.',
     placeholder: false,
   },
   {
-    year: 'Today',
-    title: 'Four specialist sister companies',
+    year: '2013',
+    title: 'Two specialist businesses. One vision.',
     description:
-      'The group has grown into four distinct companies — e2e HRC, elite PiC, e2e Infosys and e2e Cyber Solutions — each covering a different part of the talent and business landscape.',
+      'We established two dedicated companies: e2e HRC for non-technical recruitment and e2e Infosys for technical recruitment.',
+    placeholder: false,
+  },
+  {
+    year: '2016',
+    title: 'Immigration expertise takes shape',
+    description:
+      'Immigration services evolved into a dedicated business with the establishment of Elite PiC, registered with the Immigration Advice Authority (IAA).',
+    placeholder: false,
+  },
+  {
+    year: '2018',
+    title: 'Building a complete growth partnership',
+    description:
+      'e2e Cyber Solutions was established, bringing marketing, technology and manpower solutions together to become a one-stop growth partner for businesses.',
     placeholder: false,
   },
 ];

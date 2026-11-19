@@ -13,7 +13,7 @@ import './our-group.css';
 const companies = [
   {
     name: 'e2e Infosys',
-    tagline: 'Navigating the new digital landscape.',
+    tagline: 'Navigating the new digital landscape by hiring skilled talent.',
     slug: 'e2e-infosys',
     color: '#14B8A6',
     Icon: Monitor,

@@ -181,11 +181,11 @@ export const servicesSection = {
 };
 
 export const journeySection = {
-  eyebrow: 'HOW THE GROUP WORKS TOGETHER',
+  eyebrow: 'How the group works together',
   heading: {
     before: 'One group, ',
-    accent: 'one',
-    after: ' point of contact.',
+    accent: 'One',
+    after: ' way solution',
   },
   subtext: 'No gaps between services — from hiring to growth.',
   steps: [
@@ -245,7 +245,7 @@ export const globalPresenceSection = {
   eyebrow: 'GLOBAL PRESENCE',
   heading: {
     before: 'Local expertise, ',
-    accent: 'international reach.',
+    accent: 'International reach.',
   },
   regions: [
     { name: 'United Kingdom', suffix: '(HQ)' },
@@ -300,7 +300,7 @@ export const contactSection = {
 
 export const footerContent = {
   tagline:
-    'Talent and management solutions for a connected world. Recruitment, immigration, IT and digital growth from one group.',
+    'Talent and management solutions for a connected world. Recruitment, immigration, IT and Digital Growth from one group.',
   groupLinks: [
     { label: 'Home', to: '/' },
     { label: 'About Us', to: '/about' },
@@ -315,7 +315,7 @@ export const footerContent = {
   connectLinks: [
     {
       label: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/e2e-world-group/',
+      url: 'https://www.linkedin.com/company/e2e-world-group-uk/',
       external: true,
     },
     { label: 'Privacy Policy', to: '/privacy-policy' },

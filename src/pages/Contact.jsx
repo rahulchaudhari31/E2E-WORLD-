@@ -4,6 +4,7 @@ import ContactForm from '../components/contact/ContactForm';
 import { LinkedInIcon } from '../components/layout/SocialIcons';
 import { contact } from '../data/site';
 import { contactSection } from '../data/homeContent';
+import images from '../data/images';
 import ventures from '../data/ventures';
 
 const phoneHref = `tel:${contact.phone.replace(/\s|\(0\)/g, '')}`;
@@ -21,6 +22,7 @@ const Contact = () => {
           eyebrow="Contact Us"
           title="Let's start something great."
           subtitle={contactSection.subtext}
+          sideImage={images.contactHeadset}
           breadcrumb={[
             { label: 'Home', to: '/' },
             { label: 'Contact' },
