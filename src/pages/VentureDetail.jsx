@@ -396,7 +396,7 @@ const VentureDetail = () => {
                               />
                               <a
                                 href={`tel:${venture.contactInfo.phone.replace(
-                                  /\s/g,
+                                  /\s|\(0\)/g,
                                   ''
                                 )}`}
                                 className="hover:underline"

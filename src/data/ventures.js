@@ -57,6 +57,12 @@ const ventures = [
         cta: { label: 'Register Your CV', to: '/contact' },
       },
     ],
+    contactInfo: {
+      address: 'Unit 2, 1204B Stratford Road, Hall Green, Birmingham, B28 8HN, UK',
+      phone: '+44 (0) 121 778 2400',
+      email: 'info@e2ehrc.co.uk',
+      hours: 'Monday to Friday, 9am to 6pm',
+    },
     regions: ['United Kingdom', 'Middle East', 'South East Asia'],
     color: '#1A75BB',
     icon: 'Users',
@@ -116,6 +122,7 @@ const ventures = [
     ],
     contactInfo: {
       address: '1204B Stratford Road, Birmingham, B28 8HN, UK',
+      phone: '+44 (0) 121 778 2400',
       email: 'info@e2einfosys.com',
       hours: 'Monday to Friday, 8am to 6pm',
     },
@@ -194,6 +201,12 @@ const ventures = [
           'Yes. elite PiC supports individuals planning long-term life in the UK, including guidance on settlement routes.',
       },
     ],
+    contactInfo: {
+      address: 'Unit 1, 1204B Stratford Road, Birmingham, B28 8HN, UK',
+      phone: '+44 (0) 121 778 2400',
+      email: 'immigration@elitepic.co.uk',
+      hours: 'Monday to Friday, 9am to 6pm',
+    },
     regions: ['United Kingdom'],
     color: '#F7941D',
     icon: 'Globe',
@@ -245,7 +258,7 @@ const ventures = [
       },
     ],
     contactInfo: {
-      address: '1204B Stratford Road, Birmingham, B28 8HN',
+      address: '1204B Stratford Road, Birmingham, B28 8HN, UK',
       phone: '0121 271 0369',
       email: 'info@e2ecybersolutions.com',
     },
