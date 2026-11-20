@@ -123,18 +123,18 @@ const Footer = () => {
         </Container>
 
         <div className="relative border-t border-white/10">
-          <Container className="flex flex-col items-center justify-between gap-5 py-6 text-center text-xs text-slate-400 sm:flex-row sm:text-left">
+          <Container className="flex flex-col items-center justify-between gap-5 py-6 text-center text-xs text-slate-400 lg:flex-row lg:text-left">
             <p>
               &copy; {year} e2e World Group. All rights reserved.
             </p>
-            <div className="order-last sm:order-none">
-              <div className="inline-flex items-center rounded-lg bg-white/5 px-3 py-2 ring-1 ring-white/10">
+            <div className="order-last lg:order-none">
+              <div className="inline-flex items-center rounded-lg bg-white/5 px-4 py-2 ring-1 ring-white/10">
                 <img
                   src={images.recBadge}
                   alt="REC"
                   loading="lazy"
                   decoding="async"
-                  className="h-8 w-auto max-w-[150px] object-contain sm:h-10 sm:max-w-[190px]"
+                  className="h-7 w-[165px] object-fill lg:h-9 lg:w-[240px]"
                 />
               </div>
             </div>
