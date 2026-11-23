@@ -64,7 +64,7 @@ export const whyChooseUs = [
     icon: 'ShieldCheck',
     title: 'Compliance-led',
     description:
-      'IAA (formerly OISC) approved immigration advisory with sponsorship licence and right-to-work compliance support.',
+      'IAA formerly OISC approved immigration advisory with sponsorship licence and right-to-work compliance support.',
   },
   {
     icon: 'Settings2',

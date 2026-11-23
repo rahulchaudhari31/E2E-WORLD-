@@ -74,17 +74,17 @@ const ventures = [
   {
     slug: 'e2e-infosys',
     name: 'e2e Infosys',
-    tagline: 'Navigating the new digital landscape.',
+    tagline: 'Navigating the new digital landscape with Recruitment Process Outsourcing (RPO).',
     shortDescription:
-      'Specialist hiring, IT consulting and workforce solutions to power your digital transformation.',
+      'Specialist hiring, IT consulting, workforce solutions and Recruitment Process Outsourcing (RPO) to power your digital transformation.',
     longDescription:
-      'e2e Infosys is an international resource solutions, IT consulting and resource provider that enables clients to achieve their digital ambitions. We bring together our digital expertise, recruitment experience and deep domain knowledge from across the e2e World businesses. With a presence in the UK, Europe and South Asia, we help businesses excel in a competitive market where innovation and specialisation drive success. We pride ourselves on our experience and professional standing, and on getting the job done right, the first time, each time.',
+      'e2e Infosys is an international resource solutions, IT consulting and resource provider that enables clients to achieve their digital ambitions. We bring together our digital expertise, recruitment experience and deep domain knowledge from across the e2e World businesses. With a presence in the UK, Europe and South Asia, we help businesses excel in a competitive market where innovation and specialisation drive success. We pride ourselves on our experience and professional standing, and on getting the job done right, the first time, each time. Our Recruitment Process Outsourcing (RPO) services give organisations a streamlined way to manage end-to-end hiring.',
     services: [
       'Talent Acquisition / Staffing',
+      'Recruitment Process Outsourcing (RPO)',
       'IT Consulting and Business Solutions',
       'Leadership Hiring',
       'Payroll and Workforce Management',
-      'Recruitment Process Outsourcing (RPO)',
       'Digital excellence',
     ],
     sectors: [
@@ -139,12 +139,13 @@ const ventures = [
     name: 'elite PiC',
     tagline: 'Expert guidance through UK immigration.',
     shortDescription:
-      'An IAA (formerly OISC) approved advisory company helping businesses and skilled professionals with visas, sponsorship and settlement.',
+      'An IAA formerly OISC approved advisory company helping businesses and skilled professionals with visas, sponsorship and settlement.',
     longDescription:
-      'elite PiC is the immigration and visa consultancy of e2e World Group. As an IAA (formerly OISC) approved advisory company, we specialise in immigration consultancy for businesses needing sponsorship licences, visa applications and compliance support. We simplify the intricate processes of global workforce mobility, so that businesses and skilled professionals can transition smoothly into UK organisations.',
+      'elite PiC is the immigration and visa consultancy of e2e World Group. As an IAA formerly OISC approved advisory company, we specialise in immigration consultancy for businesses needing sponsorship licences, visa applications and compliance support. We simplify the intricate processes of global workforce mobility, so that businesses and skilled professionals can transition smoothly into UK organisations.',
     services: [
       'Sponsorship licences',
       'Visa applications for your workers',
+      'Skilled workers',
       'Compliance support',
       'Visa applications for individuals',
       'Settlement support',
@@ -183,7 +184,7 @@ const ventures = [
       },
     ],
     regulation:
-      'elite PiC is approved by the Immigration Advice Authority (IAA, formerly OISC).',
+      'elite PiC is approved by the Immigration Advice Authority (IAA), formerly OISC.',
     faqs: [
       {
         question: 'Do I need a sponsor licence to hire overseas workers?',
@@ -218,13 +219,14 @@ const ventures = [
   {
     slug: 'e2e-cyber-solutions',
     name: 'e2e Cyber Solutions',
-    tagline: 'Disruptive ideas. Strategic execution.',
+    tagline: 'Disruptive ideas. Strategic execution. CRM, BI Solutions.',
     shortDescription:
-      'An integrated web development, marketing and creative agency with digital at its core.',
+      'An integrated web development, marketing and creative agency delivering CRM, BI Solutions and digital experiences.',
     longDescription:
-      'e2e Cyber Solutions is the missing link between your business and your audience. We bridge that gap by creating new digital avenues, creative strategies and marketing solutions. We build and deliver experiential digital products, conversion-based designs and engaging content. We are a fully functional digital agency providing integrated digital marketing, software, strategy and content solutions across platforms and formats, with cybersecurity among our offerings.',
+      'e2e Cyber Solutions is the missing link between your business and your audience. We bridge that gap by creating new digital avenues, creative strategies and marketing solutions. We build and deliver experiential digital products, conversion-based designs and engaging content. We are a fully functional digital agency providing integrated digital marketing, software, strategy and content solutions across platforms and formats, with cybersecurity among our offerings. We also deliver CRM, BI Solutions and data-led digital products that help businesses understand their customers and grow.',
     services: [
       'Web development',
+      'CRM, BI Solutions',
       'Web design',
       'Mobile app design and development',
       'Digital marketing and SEO',

@@ -136,7 +136,7 @@ export const timeline = [
     year: '2013',
     title: 'Two specialist businesses. One vision.',
     description:
-      'We established two dedicated companies: e2e HRC for non-technical recruitment and e2e Infosys for technical recruitment.',
+      'We established two dedicated companies: e2e HRC for non-technical recruitment and e2e Infosys for technical recruitment and Recruitment Process Outsourcing (RPO).',
     placeholder: false,
   },
   {
@@ -150,7 +150,7 @@ export const timeline = [
     year: '2018',
     title: 'Building a complete growth partnership',
     description:
-      'e2e Cyber Solutions was established, bringing marketing, technology and manpower solutions together to become a one-stop growth partner for businesses.',
+      'e2e Cyber Solutions was established, bringing digital marketing, web development, cybersecurity and CRM, BI Solutions together to become a one-stop growth partner for businesses.',
     placeholder: false,
   },
 ];

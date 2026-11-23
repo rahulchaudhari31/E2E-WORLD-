@@ -33,7 +33,7 @@ export const heroContent = {
         label: 'IT Hiring & Consultancy',
         company: 'e2e Infosys',
         description:
-          'Specialist technical hiring, IT consulting and workforce management solutions.',
+          'Specialist technical hiring, IT consulting, workforce management solutions and Recruitment Process Outsourcing (RPO).',
         url: 'https://www.e2einfosys.com/',
       },
       {
@@ -41,7 +41,7 @@ export const heroContent = {
         label: 'Visas & Immigration Advice',
         company: 'elite PiC',
         description:
-          'IAA (formerly OISC) approved sponsorship licence, visa and compliance support.',
+          'IAA formerly OISC approved sponsorship licence, visa and compliance support.',
         url: 'https://www.elitepic.co.uk/',
       },
       {
@@ -49,7 +49,7 @@ export const heroContent = {
         label: 'Digital & Tech Solutions',
         company: 'e2e Cyber Solutions',
         description:
-          'Digital marketing, web development and cybersecurity that grow your brand.',
+          'CRM, BI Solutions, digital marketing, web development and cybersecurity that grow your brand.',
         url: 'https://www.e2ecybersolutions.com/',
       },
     ],
@@ -91,15 +91,15 @@ export const companiesSection = {
       slug: 'e2e-infosys',
       url: 'https://www.e2einfosys.com/',
       description:
-        'Hiring solutions for technical roles in IT, banking, finance, telecom and more, with a presence in the UK, Europe and South Asia.',
-      tags: ['IT Consulting', 'RPO', 'Workforce'],
+        'Hiring solutions for technical roles in IT, banking, finance, telecom and more, with a presence in the UK, Europe and South Asia. We also provide Recruitment Process Outsourcing (RPO).',
+      tags: ['IT Consulting', 'Recruitment Process Outsourcing (RPO)', 'Workforce'],
     },
     {
       name: 'elite PiC',
       slug: 'elite-pic',
       url: 'https://www.elitepic.co.uk/',
       description:
-        'An IAA (formerly OISC) approved advisory company specialising in immigration consultancy, sponsorship licences, visa applications and compliance.',
+        'An IAA formerly OISC approved advisory company specialising in immigration consultancy, sponsorship licences, visa applications and compliance.',
       tags: ['Sponsor Licences', 'Visas', 'Compliance'],
     },
     {
@@ -107,8 +107,8 @@ export const companiesSection = {
       slug: 'e2e-cyber-solutions',
       url: 'https://www.e2ecybersolutions.com/',
       description:
-        'Modern digital marketing and cybersecurity solutions that help clients protect their assets and grow their digital presence.',
-      tags: ['Web', 'Marketing', 'Cybersecurity'],
+        'Modern digital marketing, cybersecurity and CRM, BI Solutions that help clients protect their assets and grow their digital presence.',
+      tags: ['Web', 'Marketing', 'Cybersecurity', 'CRM, BI Solutions'],
     },
   ],
 };
@@ -141,7 +141,7 @@ export const servicesSection = {
       company: 'e2e Infosys',
       url: 'https://www.e2einfosys.com/',
       description:
-        'e2e Infosys provides hiring solutions for technical roles in sectors such as IT, banking, finance, telecom and more. With a presence in the UK, Europe and South Asia, it helps businesses compete where innovation and specialisation drive success.',
+        'e2e Infosys provides hiring solutions for technical roles in sectors such as IT, banking, finance, telecom and more. With a presence in the UK, Europe and South Asia, it helps businesses compete where innovation and specialisation drive success. We also deliver Recruitment Process Outsourcing (RPO) for end-to-end hiring.',
       features: [
         'IT consulting',
         'Workforce management solutions',
@@ -155,7 +155,7 @@ export const servicesSection = {
       company: 'elite PiC',
       url: 'https://www.elitepic.co.uk/',
       description:
-        'elite PiC is an IAA (formerly OISC) approved advisory company specialising in immigration consultancy. It supports businesses that need sponsorship licences, visa applications and compliance support.',
+        'elite PiC is an IAA formerly OISC approved advisory company specialising in immigration consultancy. It supports businesses that need sponsorship licences, visa applications and compliance support.',
       features: [
         'Sponsor licences',
         'Visa applications',
@@ -169,11 +169,12 @@ export const servicesSection = {
       company: 'e2e Cyber Solutions',
       url: 'https://www.e2ecybersolutions.com/',
       description:
-        'e2e Cyber Solutions provides modern digital marketing and cybersecurity solutions, helping clients protect their assets and grow their digital presence through result-driven marketing and comprehensive web development.',
+        'e2e Cyber Solutions provides modern digital marketing and cybersecurity solutions, helping clients protect their assets and grow their digital presence through result-driven marketing and comprehensive web development. We also deliver CRM, BI Solutions alongside our digital services.',
       features: [
         'Digital marketing',
         'Web development',
         'Cybersecurity',
+        'CRM, BI Solutions',
         'Brand growth',
       ],
     },
@@ -211,7 +212,7 @@ export const journeySection = {
       companies: 'E2E INFOSYS',
       title: 'Keep your workforce running.',
       description:
-        'e2e Infosys supports payroll, workforce management and IT consulting.',
+        'e2e Infosys supports payroll, workforce management, IT consulting and Recruitment Process Outsourcing (RPO).',
     },
     {
       number: '04',
@@ -219,7 +220,7 @@ export const journeySection = {
       companies: 'E2E CYBER SOLUTIONS',
       title: 'Grow your brand online.',
       description:
-        'e2e Cyber Solutions builds your website, marketing and brand. One group, one point of contact, no gaps between services.',
+        'e2e Cyber Solutions builds your website, marketing and brand, with CRM, BI Solutions to support growth. One group, one point of contact, no gaps between services.',
     },
   ],
 };

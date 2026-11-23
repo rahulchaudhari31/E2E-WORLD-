@@ -34,13 +34,22 @@ const Footer = () => {
           className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-orange/10 blur-3xl"
         />
 
-        <Container className="relative py-14 md:py-20">
+        <Container className="relative pb-6 pt-14 md:pb-8 md:pt-20">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-8">
             <div className="sm:col-span-2 lg:col-span-1">
               <Logo variant="footer" />
               <p className="mt-5 max-w-xs text-sm leading-relaxed text-slate-400">
                 {footerContent.tagline}
               </p>
+              <div className="mt-6 inline-flex items-center justify-center rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                <img
+                  src={images.groupBadge}
+                  alt="e2e World Group badge"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-24 w-auto object-contain sm:h-28"
+                />
+              </div>
             </div>
 
             <nav aria-label="Group links">
@@ -123,21 +132,10 @@ const Footer = () => {
         </Container>
 
         <div className="relative border-t border-white/10">
-          <Container className="flex flex-col items-center justify-between gap-5 py-6 text-center text-xs text-slate-400 lg:flex-row lg:text-left">
+          <Container className="flex flex-col items-center justify-between gap-3 py-4 text-center text-xs text-slate-400 lg:flex-row lg:text-left">
             <p>
               &copy; {year} e2e World Group. All rights reserved.
             </p>
-            <div className="order-last lg:order-none">
-              <div className="inline-flex items-center rounded-lg bg-white/5 px-4 py-2 ring-1 ring-white/10">
-                <img
-                  src={images.recBadge}
-                  alt="REC"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-7 w-[165px] object-fill lg:h-9 lg:w-[240px]"
-                />
-              </div>
-            </div>
             <p className="text-slate-400">
               Talent and management solutions for a connected world.
             </p>

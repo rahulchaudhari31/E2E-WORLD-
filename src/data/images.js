@@ -24,7 +24,7 @@ const images = {
   cybersecurity: '/banner-e2e-cyber-solutions.png',
 
   /* ---- Misc ---- */
-  recBadge: '/rec.png',
+  groupBadge: '/footer-badge.png',
   laptopWork: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
   skyline: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80',
   globe: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&q=80',

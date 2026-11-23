@@ -13,7 +13,7 @@ import './our-group.css';
 const companies = [
   {
     name: 'e2e Infosys',
-    tagline: 'Navigating the new digital landscape by hiring skilled talent.',
+    tagline: 'Navigating the new digital landscape with Recruitment Process Outsourcing (RPO) and skilled talent.',
     slug: 'e2e-infosys',
     color: '#14B8A6',
     Icon: Monitor,
@@ -29,7 +29,7 @@ const companies = [
   },
   {
     name: 'e2e Cyber Solutions',
-    tagline: 'Disruptive ideas. Strategic execution.',
+    tagline: 'Disruptive ideas. Strategic execution. CRM, BI Solutions.',
     slug: 'e2e-cyber-solutions',
     color: '#EF4444',
     Icon: Shield,
